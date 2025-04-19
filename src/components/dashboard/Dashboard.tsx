@@ -10,9 +10,10 @@ import { getFilteredRatings, getCategoryRatings } from '../../utils/filterUtils'
 
 interface DashboardProps {
   sidebarCollapsed: boolean;
+  sidebarWidth: number;
 }
 
-const Dashboard: React.FC<DashboardProps> = ({ sidebarCollapsed }) => {
+const Dashboard: React.FC<DashboardProps> = ({ sidebarCollapsed, sidebarWidth }) => {
   const { filters } = useFilter();
   const { dashboardState } = useDashboard();
   
@@ -22,8 +23,14 @@ const Dashboard: React.FC<DashboardProps> = ({ sidebarCollapsed }) => {
   // Get ratings for the selected category (if any)
   const categoryRatings = getCategoryRatings(filteredRatings, dashboardState.selectedCategory);
   
+  // Calculate the left margin based on sidebar state
+  const leftMargin = sidebarCollapsed ? 48 : sidebarWidth; // 48px when collapsed
+  
   return (
-    <div className={`flex-1 ${sidebarCollapsed ? 'ml-12' : 'ml-64'} transition-all duration-300 overflow-y-auto`}>
+    <div 
+      className="flex-1 overflow-y-auto transition-all duration-300"
+      style={{ marginLeft: `${leftMargin}px` }}
+    >
       {/* Filter Summary Bar */}
       <FilterSummary />
       

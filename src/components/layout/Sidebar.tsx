@@ -1,14 +1,27 @@
 import React from 'react';
-import { ChevronLeft, ChevronRight, Users, Clock, Calendar, ChevronDown } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Users, Clock, ChevronDown } from 'lucide-react';
 import { useFilter } from '../../context/FilterContext';
 import { mockUsers, timePeriodOptions, ratingCategories } from '../../data/mockData';
+import DatePicker from '../shared/DatePicker';
+import ResizableHandle from './ResizableHandle';
 
 interface SidebarProps {
   collapsed: boolean;
   toggleSidebar: () => void;
+  width: number;
+  onResize: (width: number) => void;
+  minWidth: number;
+  maxWidth: number;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ collapsed, toggleSidebar }) => {
+const Sidebar: React.FC<SidebarProps> = ({ 
+  collapsed, 
+  toggleSidebar,
+  width,
+  onResize,
+  minWidth,
+  maxWidth 
+}) => {
   const {
     filters,
     toggleUser,
@@ -19,11 +32,13 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, toggleSidebar }) => {
     toggleRatingCategory,
   } = useFilter();
   
+  // Calculate fixed width when collapsed, or use the dynamic width when expanded
+  const sidebarWidth = collapsed ? 48 : width; // 48px = w-12
+  
   return (
     <div
-      className={`bg-gray-800 text-white h-screen sidebar-transition ${
-        collapsed ? 'w-12' : 'w-64'
-      } flex flex-col`}
+      className={`bg-gray-800 text-white h-screen sidebar-transition relative flex flex-col`}
+      style={{ width: `${sidebarWidth}px` }}
     >
       {/* Sidebar Header with Toggle Button */}
       <div className="flex justify-between items-center p-4 border-b border-gray-700">
@@ -37,8 +52,18 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, toggleSidebar }) => {
         </button>
       </div>
       
+      {/* Resizable Handle - Only show when not collapsed */}
+      {!collapsed && (
+        <ResizableHandle
+          onResize={onResize}
+          minWidth={minWidth}
+          maxWidth={maxWidth}
+          currentWidth={width}
+        />
+      )}
+      
       {/* Sidebar Content - Only show when not collapsed */}
-      {!collapsed ? (
+      {!collapsed && (
         <div className="p-4 flex-1 overflow-y-auto">
           {/* User Selection Section */}
           <div className="mb-6">
@@ -155,41 +180,19 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, toggleSidebar }) => {
             </div>
             
             <div className="space-y-2">
-              <div>
-                <label htmlFor="fromDate" className="block text-sm mb-1">From Date</label>
-                <div className="relative">
-                  <input
-                    type="text"
-                    id="fromDate"
-                    value={filters.fromDate}
-                    onChange={(e) => setFromDate(e.target.value)}
-                    placeholder="dd/mm/yyyy"
-                    className="w-full p-2 bg-gray-700 rounded"
-                  />
-                  <Calendar
-                    size={18}
-                    className="absolute right-2 top-3 pointer-events-none"
-                  />
-                </div>
-              </div>
+              <DatePicker
+                id="fromDate"
+                label="From Date"
+                value={filters.fromDate}
+                onChange={setFromDate}
+              />
               
-              <div>
-                <label htmlFor="toDate" className="block text-sm mb-1">To Date</label>
-                <div className="relative">
-                  <input
-                    type="text"
-                    id="toDate"
-                    value={filters.toDate}
-                    onChange={(e) => setToDate(e.target.value)}
-                    placeholder="dd/mm/yyyy"
-                    className="w-full p-2 bg-gray-700 rounded"
-                  />
-                  <Calendar
-                    size={18}
-                    className="absolute right-2 top-3 pointer-events-none"
-                  />
-                </div>
-              </div>
+              <DatePicker
+                id="toDate"
+                label="To Date"
+                value={filters.toDate}
+                onChange={setToDate}
+              />
             </div>
           </div>
           
@@ -216,7 +219,7 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, toggleSidebar }) => {
             </div>
           </div>
         </div>
-      ) : null}
+      )}
     </div>
   );
 };

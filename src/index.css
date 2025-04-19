@@ -17,10 +17,43 @@ body {
   transition: width 0.3s ease-in-out;
 }
 
+/* Resizable handle styling */
+.resize-handle {
+  cursor: col-resize;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+}
+
+.resize-handle:hover,
+.resize-handle.active {
+  background-color: rgba(59, 130, 246, 0.5);
+}
+
 /* Chart customizations */
 .chart-container {
   width: 100%;
   position: relative;
   margin: auto;
   height: 300px;
+}
+
+/* Date picker styles */
+.date-picker-calendar {
+  background-color: #374151;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.date-picker-day {
+  cursor: pointer;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+  text-align: center;
+}
+
+.date-picker-day:hover {
+  background-color: #4b5563;
 }
