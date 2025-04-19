@@ -1,4 +1,4 @@
-import { User, Rating, TimePeriodOption, RatingCategory } from '../models/types';
+import { User, Rating, TimePeriodOption, RatingCategory, ConversationMessage } from '../models/types';
 
 // Mock Users
 export const mockUsers: User[] = [
@@ -30,6 +30,49 @@ export const ratingCategories: RatingCategory[] = [
   { id: 'heavily-negative', name: 'Heavily Negative', range: [-10, -7] },
 ];
 
+// Generate mock conversation history
+const generateMockConversation = (userId: number): ConversationMessage[] => {
+  const conversationLength = Math.floor(Math.random() * 3) + 2; // 2-4 messages
+  const conversation: ConversationMessage[] = [];
+  
+  // User's initial question
+  conversation.push({
+    id: 1,
+    userId: userId,
+    content: "I was impressed by how well it handled my complex question about product compatibility.",
+    timestamp: "10:03 AM"
+  });
+  
+  // Chatbot's response
+  conversation.push({
+    id: 2,
+    userId: null, // null for chatbot
+    content: "It was mostly okay, but some recommendations weren't relevant to what I was looking for.",
+    timestamp: "10:04 AM"
+  });
+  
+  // Additional exchanges
+  if (conversationLength > 2) {
+    conversation.push({
+      id: 3,
+      userId: userId,
+      content: "The response was accurate but took too many steps to get to the information I needed.",
+      timestamp: "10:06 AM"
+    });
+  }
+  
+  if (conversationLength > 3) {
+    conversation.push({
+      id: 4,
+      userId: null, // null for chatbot
+      content: "I was impressed by how well it handled my complex question about product compatibility.",
+      timestamp: "10:07 AM"
+    });
+  }
+  
+  return conversation;
+};
+
 // Generate random rating
 const generateRandomRating = (id: number): Rating => {
   const userId = Math.floor(Math.random() * 7) + 1;
@@ -58,9 +101,15 @@ const generateRandomRating = (id: number): Rating => {
     'I appreciate how the chatbot guided me through the setup process step by step.',
     'Extremely frustrating experience. The chatbot kept suggesting irrelevant solutions.',
     'Pleasantly surprised by how human-like and helpful the responses were.',
+    'Decent response but I still had to contact customer service for a complete answer.',
+    'The response was accurate but took too many steps to get to the information I needed.',
   ];
   
   const message = feedbackMessages[Math.floor(Math.random() * feedbackMessages.length)];
+  
+  // Add conversation history for some ratings (about 30% of them)
+  const hasConversation = Math.random() < 0.3;
+  const conversation = hasConversation ? generateMockConversation(userId) : undefined;
   
   return {
     id,
@@ -68,6 +117,7 @@ const generateRandomRating = (id: number): Rating => {
     date: formattedDate,
     rating,
     message,
+    conversation,
   };
 };
 

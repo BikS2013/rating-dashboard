@@ -13,15 +13,15 @@ const DetailedView: React.FC<DetailedViewProps> = ({ categoryRatings }) => {
   
   return (
     <div>
-      <h2 className="text-lg font-semibold mb-2">Detailed Analysis</h2>
+      <h2 className="text-lg font-semibold mb-3">Detailed Analysis</h2>
       
       {/* Tab Navigation */}
-      <div className="flex border-b">
+      <div className="flex border-b mb-4">
         <button
           className={`px-4 py-2 ${
             dashboardState.activeTab === 'details'
-              ? 'border-b-2 border-blue-500 font-medium'
-              : ''
+              ? 'border-b-2 border-blue-500 font-medium text-blue-600'
+              : 'text-gray-600 hover:text-gray-800'
           }`}
           onClick={() => setActiveTab('details')}
         >
@@ -30,8 +30,8 @@ const DetailedView: React.FC<DetailedViewProps> = ({ categoryRatings }) => {
         <button
           className={`px-4 py-2 ${
             dashboardState.activeTab === 'distribution'
-              ? 'border-b-2 border-blue-500 font-medium'
-              : ''
+              ? 'border-b-2 border-blue-500 font-medium text-blue-600'
+              : 'text-gray-600 hover:text-gray-800'
           }`}
           onClick={() => setActiveTab('distribution')}
         >
@@ -40,7 +40,7 @@ const DetailedView: React.FC<DetailedViewProps> = ({ categoryRatings }) => {
       </div>
       
       {/* Tab Content */}
-      <div className="mt-4">
+      <div>
         {dashboardState.activeTab === 'details' ? (
           <DetailedRatings ratings={categoryRatings} />
         ) : (

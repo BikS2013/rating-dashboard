@@ -4,6 +4,14 @@ export interface User {
   name: string;
 }
 
+// Message in a conversation
+export interface ConversationMessage {
+  id: number;
+  userId: number | null; // null for chatbot messages
+  content: string;
+  timestamp: string;
+}
+
 // Rating Model
 export interface Rating {
   id: number;
@@ -11,6 +19,7 @@ export interface Rating {
   date: string; // Format: 'dd/mm/yyyy'
   rating: number; // Range: -10 to 10
   message: string; // User feedback message
+  conversation?: ConversationMessage[]; // Optional conversation history
 }
 
 // Time Period Option
@@ -52,4 +61,5 @@ export interface DashboardState {
   selectedCategory: string | null;
   activeTab: 'details' | 'distribution';
   expandedMessages: Record<number, boolean>;
+  expandedConversations: Record<number, boolean>;
 }

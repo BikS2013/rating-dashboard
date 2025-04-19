@@ -6,12 +6,14 @@ interface DashboardContextType {
   setSelectedCategory: (category: string | null) => void;
   setActiveTab: (tab: 'details' | 'distribution') => void;
   toggleMessageExpansion: (messageId: number) => void;
+  toggleConversationExpansion: (ratingId: number) => void;
 }
 
 const defaultDashboardState: DashboardState = {
   selectedCategory: null,
   activeTab: 'details',
   expandedMessages: {},
+  expandedConversations: {},
 };
 
 const DashboardContext = createContext<DashboardContextType | undefined>(undefined);
@@ -43,6 +45,16 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({ children 
     });
   };
 
+  const toggleConversationExpansion = (ratingId: number) => {
+    setDashboardState({
+      ...dashboardState,
+      expandedConversations: {
+        ...dashboardState.expandedConversations,
+        [ratingId]: !dashboardState.expandedConversations[ratingId],
+      },
+    });
+  };
+
   return (
     <DashboardContext.Provider
       value={{
@@ -50,6 +62,7 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({ children 
         setSelectedCategory,
         setActiveTab,
         toggleMessageExpansion,
+        toggleConversationExpansion,
       }}
     >
       {children}
