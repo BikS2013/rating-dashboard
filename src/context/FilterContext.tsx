@@ -1,6 +1,7 @@
 import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
 import { FilterState, User } from '../models/types';
-import { timePeriodOptions, formatDate } from '../data/mockData';
+import { timePeriodOptions } from '../utils/constants';
+import { formatDateString as formatDate } from '../utils/dateUtils';
 import { useRatingService } from './RatingServiceContext';
 
 interface FilterContextType {

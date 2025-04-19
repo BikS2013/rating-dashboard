@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Users, Clock, ChevronDown } from 'lucide-react';
 import { useFilter } from '../../context/FilterContext';
 import { User } from '../../models/types';
-import { timePeriodOptions, ratingCategories } from '../../data/mockData';
+import { timePeriodOptions, ratingCategories } from '../../utils/constants';
 import DatePicker from '../shared/DatePicker';
 import ResizableHandle from './ResizableHandle';
 import { useRatingService } from '../../context/RatingServiceContext';

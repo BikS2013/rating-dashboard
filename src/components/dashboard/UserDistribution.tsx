@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -9,9 +9,9 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-import { Rating } from '../../models/types';
+import { Rating, User } from '../../models/types';
 import { getUserDistributionData } from '../../utils/filterUtils';
-import { mockUsers } from '../../data/mockData';
+import { useRatingService } from '../../context/RatingServiceContext';
 import { prepareUserDistributionData } from '../../utils/chartUtils';
 
 // Register Chart.js components
@@ -29,8 +29,28 @@ interface UserDistributionProps {
 }
 
 const UserDistribution: React.FC<UserDistributionProps> = ({ ratings }) => {
-  const userDistribution = getUserDistributionData(ratings, mockUsers);
-  const chartData = prepareUserDistributionData(userDistribution);
+  const ratingService = useRatingService();
+  const [users, setUsers] = useState<User[]>([]);
+  const [distributionData, setDistributionData] = useState<Record<string, number>>({});
+  const [chartData, setChartData] = useState(prepareUserDistributionData({}));
+  
+  // Load users and compute distribution
+  useEffect(() => {
+    const loadUsersAndComputeDistribution = async () => {
+      try {
+        const fetchedUsers = await ratingService.getUsers();
+        setUsers(fetchedUsers);
+        
+        const distribution = getUserDistributionData(ratings, fetchedUsers);
+        setDistributionData(distribution);
+        setChartData(prepareUserDistributionData(distribution));
+      } catch (error) {
+        console.error('Error loading users for distribution chart:', error);
+      }
+    };
+    
+    loadUsersAndComputeDistribution();
+  }, [ratings, ratingService]);
   
   const options = {
     responsive: true,
@@ -77,7 +97,7 @@ const UserDistribution: React.FC<UserDistributionProps> = ({ ratings }) => {
   
   return (
     <div>
-      {Object.keys(userDistribution).length > 0 ? (
+      {Object.keys(distributionData).length > 0 ? (
         <div className="chart-container h-64">
           <Bar data={chartData} options={options} />
         </div>

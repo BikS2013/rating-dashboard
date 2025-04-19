@@ -1,7 +1,7 @@
-import React from 'react';
-import { Rating } from '../../models/types';
+import React, { useState, useEffect } from 'react';
+import { Rating, User } from '../../models/types';
 import { useDashboard } from '../../context/DashboardContext';
-import { mockUsers } from '../../data/mockData';
+import { useRatingService } from '../../context/RatingServiceContext';
 
 interface DetailedRatingsProps {
   ratings: Rating[];
@@ -9,6 +9,27 @@ interface DetailedRatingsProps {
 
 const DetailedRatings: React.FC<DetailedRatingsProps> = ({ ratings }) => {
   const { dashboardState, toggleMessageExpansion, toggleConversationExpansion } = useDashboard();
+  const ratingService = useRatingService();
+  const [users, setUsers] = useState<Record<number, User>>({});
+  
+  // Load users for displaying names
+  useEffect(() => {
+    const loadUsers = async () => {
+      try {
+        const fetchedUsers = await ratingService.getUsers();
+        // Create a map for quick lookup
+        const userMap = fetchedUsers.reduce((acc, user) => {
+          acc[user.id] = user;
+          return acc;
+        }, {} as Record<number, User>);
+        setUsers(userMap);
+      } catch (error) {
+        console.error('Error loading users for detailed ratings:', error);
+      }
+    };
+    
+    loadUsers();
+  }, [ratingService]);
   
   // Function to get rating badge color based on rating value
   const getRatingBadgeClass = (rating: number): string => {
@@ -23,8 +44,8 @@ const DetailedRatings: React.FC<DetailedRatingsProps> = ({ ratings }) => {
     <div className="space-y-6">
       {ratings.length > 0 ? (
         ratings.map(rating => {
-          const user = mockUsers.find(u => u.id === rating.userId);
-          const userName = user ? `User ${user.id}` : `User ${rating.userId}`;
+          const user = users[rating.userId];
+          const userName = user ? user.name : `User ${rating.userId}`;
           const isConversationExpanded = dashboardState.expandedConversations[rating.id];
           
           return (

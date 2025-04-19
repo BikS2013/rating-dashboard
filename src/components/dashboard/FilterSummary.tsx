@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useFilter } from '../../context/FilterContext';
-import { mockUsers, timePeriodOptions, ratingCategories } from '../../data/mockData';
+import { User } from '../../models/types';
+import { timePeriodOptions, ratingCategories } from '../../utils/constants';
+import { useRatingService } from '../../context/RatingServiceContext';
 
 const FilterSummary: React.FC = () => {
   const { filters } = useFilter();
+  const ratingService = useRatingService();
+  const [users, setUsers] = useState<User[]>([]);
+  
+  // Load users
+  useEffect(() => {
+    const loadUsers = async () => {
+      try {
+        const fetchedUsers = await ratingService.getUsers();
+        setUsers(fetchedUsers);
+      } catch (error) {
+        console.error('Error loading users for filter summary:', error);
+      }
+    };
+    
+    loadUsers();
+  }, [ratingService]);
   
   // Get selected users
-  const selectedUserNames = filters.selectedUsers.length === mockUsers.length
+  const selectedUserNames = filters.selectedUsers.length === users.length && users.length > 0
     ? ['All Users']
-    : mockUsers
+    : users
         .filter(user => filters.selectedUsers.includes(user.id))
         .map(user => user.name);
   

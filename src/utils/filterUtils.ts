@@ -1,5 +1,5 @@
 import { Rating, FilterState } from '../models/types';
-import { ratingCategories } from '../data/mockData';
+import { ratingCategories } from '../utils/constants';
 
 // Filter ratings based on filter state
 export const getFilteredRatings = (ratings: Rating[], filters: FilterState): Rating[] => {

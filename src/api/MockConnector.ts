@@ -1,6 +1,7 @@
 import { Rating, User, FilterState } from "../models/types";
 import { BaseConnector } from "./RatingServiceConnector";
-import { mockUsers, mockRatings, ratingCategories } from "../data/mockData";
+import { mockUsers, mockRatings } from "../data/mockData";
+import { ratingCategories } from "../utils/constants";
 import { getFilteredRatings, getSummaryData, getUserDistributionData } from "../utils/filterUtils";
 import { prepareBarChartData } from "../utils/chartUtils";
 
