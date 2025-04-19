@@ -6,16 +6,38 @@ import { RatingServiceProvider } from './context/RatingServiceContext';
 import { RatingServiceFactory, ConnectorType } from './api/RatingServiceFactory';
 
 const App: React.FC = () => {
-  // Initialize the rating service connector based on environment
-  // For development, use the mock connector
-  // For production, this would use the REST connector with real API endpoints
+  // Debug environment variables
+  console.log('Environment variables:', {
+    VITE_JSON_URL: import.meta.env.VITE_JSON_URL,
+    VITE_API_URL: import.meta.env.VITE_API_URL,
+    VITE_AUTH_TOKEN: import.meta.env.VITE_AUTH_TOKEN ? '[REDACTED]' : undefined,
+    isProd: import.meta.env.PROD
+  });
+  
+  // Determine connector type based on environment variables
+  let connectorType = ConnectorType.MOCK;
+  
+  if (import.meta.env.VITE_JSON_URL) {
+    connectorType = ConnectorType.JSON;
+    console.log('Using JSON connector with URL:', import.meta.env.VITE_JSON_URL);
+  } else if (import.meta.env.VITE_API_URL && import.meta.env.PROD) {
+    connectorType = ConnectorType.REST;
+    console.log('Using REST connector with URL:', import.meta.env.VITE_API_URL);
+  } else {
+    console.log('Using MOCK connector (default)');
+  }
+  
+  // Initialize the rating service connector
   const connector = RatingServiceFactory.createConnector(
-    import.meta.env.PROD ? ConnectorType.REST : ConnectorType.MOCK,
+    connectorType,
     {
-      apiUrl: import.meta.env.VITE_API_URL as string || 'https://api.example.com',
-      authToken: import.meta.env.VITE_AUTH_TOKEN as string
+      apiUrl: import.meta.env.VITE_API_URL,
+      authToken: import.meta.env.VITE_AUTH_TOKEN,
+      jsonUrl: import.meta.env.VITE_JSON_URL
     }
   );
+  
+  console.log('Connector type:', connector.getBaseUrl());
   
   return (
     <RatingServiceProvider connector={connector}>

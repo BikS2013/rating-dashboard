@@ -1,6 +1,7 @@
 import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
-import { FilterState } from '../models/types';
-import { mockUsers, timePeriodOptions, formatDate } from '../data/mockData';
+import { FilterState, User } from '../models/types';
+import { timePeriodOptions, formatDate } from '../data/mockData';
+import { useRatingService } from './RatingServiceContext';
 
 interface FilterContextType {
   filters: FilterState;
@@ -15,7 +16,7 @@ interface FilterContextType {
 }
 
 const defaultFilterState: FilterState = {
-  selectedUsers: mockUsers.map(user => user.id), // Select all users by default
+  selectedUsers: [], // Will be populated with all users from API
   expandUsers: false,
   selectedTimePeriod: 'last-week',
   fromDate: '12/04/2025', // Default to a week ago from our fixed date
@@ -26,7 +27,30 @@ const defaultFilterState: FilterState = {
 const FilterContext = createContext<FilterContextType | undefined>(undefined);
 
 export const FilterProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [filters, setFilters] = useState<FilterState>(defaultFilterState);
+  const ratingService = useRatingService();
+  const [users, setUsers] = useState<User[]>([]);
+  const [filters, setFilters] = useState<FilterState>({
+    ...defaultFilterState,
+    selectedUsers: [] // Will be populated on first load
+  });
+  
+  // Load users on component mount
+  useEffect(() => {
+    const loadUsers = async () => {
+      try {
+        const fetchedUsers = await ratingService.getUsers();
+        setUsers(fetchedUsers);
+        setFilters(prev => ({
+          ...prev,
+          selectedUsers: fetchedUsers.map(u => u.id) // Select all users by default
+        }));
+      } catch (error) {
+        console.error('Error loading users:', error);
+      }
+    };
+    
+    loadUsers();
+  }, [ratingService]);
 
   // Update from and to dates when time period changes
   useEffect(() => {
@@ -74,10 +98,10 @@ export const FilterProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
   const toggleUser = (userId: number | 'all') => {
     if (userId === 'all') {
-      if (filters.selectedUsers.length === mockUsers.length) {
+      if (filters.selectedUsers.length === users.length) {
         setFilters({ ...filters, selectedUsers: [] });
       } else {
-        setFilters({ ...filters, selectedUsers: mockUsers.map(user => user.id) });
+        setFilters({ ...filters, selectedUsers: users.map(user => user.id) });
       }
     } else {
       if (filters.selectedUsers.includes(userId as number)) {

@@ -8,6 +8,12 @@ import { Rating, User, FilterState } from "../models/types";
  * various backends (e.g., REST API, GraphQL, Firebase, etc.)
  */
 export interface RatingServiceConnector {
+  // Connector information
+  getBaseUrl(): string;
+  
+  // Data refresh method
+  forceRefresh?(): Promise<void>;
+  
   // User-related methods
   getUsers(): Promise<User[]>;
   getUserById(userId: number): Promise<User | null>;
@@ -39,6 +45,16 @@ export abstract class BaseConnector implements RatingServiceConnector {
   
   constructor(apiUrl: string) {
     this.apiUrl = apiUrl;
+  }
+  
+  // Get the base URL for this connector
+  getBaseUrl(): string {
+    return this.apiUrl;
+  }
+  
+  // Default implementation for force refresh (can be overridden)
+  async forceRefresh(): Promise<void> {
+    console.log(`BaseConnector: forceRefresh not implemented for ${this.apiUrl}`);
   }
   
   // Common error handling method

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Users, Clock, ChevronDown } from 'lucide-react';
 import { useFilter } from '../../context/FilterContext';
-import { mockUsers, timePeriodOptions, ratingCategories } from '../../data/mockData';
+import { User } from '../../models/types';
+import { timePeriodOptions, ratingCategories } from '../../data/mockData';
 import DatePicker from '../shared/DatePicker';
 import ResizableHandle from './ResizableHandle';
+import { useRatingService } from '../../context/RatingServiceContext';
 
 interface SidebarProps {
   collapsed: boolean;
@@ -31,6 +33,27 @@ const Sidebar: React.FC<SidebarProps> = ({
     setToDate,
     toggleRatingCategory,
   } = useFilter();
+  
+  const ratingService = useRatingService();
+  const [users, setUsers] = useState<User[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  
+  // Load users on component mount
+  useEffect(() => {
+    const loadUsers = async () => {
+      try {
+        setIsLoading(true);
+        const fetchedUsers = await ratingService.getUsers();
+        setUsers(fetchedUsers);
+      } catch (error) {
+        console.error('Error loading users for sidebar:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    
+    loadUsers();
+  }, [ratingService]);
   
   // Calculate fixed width when collapsed, or use the dynamic width when expanded
   const sidebarWidth = collapsed ? 48 : width; // 48px = w-12
@@ -93,21 +116,29 @@ const Sidebar: React.FC<SidebarProps> = ({
               </label>
             </div>
             
-            {filters.expandUsers ? (
+            {isLoading ? (
+              <div className="flex items-center justify-center p-4">
+                <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <span className="ml-2">Loading users...</span>
+              </div>
+            ) : filters.expandUsers ? (
               // Expanded view - show as list of checkboxes
               <div className="space-y-1 max-h-48 overflow-y-auto">
                 <div className="flex items-center">
                   <input
                     type="checkbox"
                     id="all-users"
-                    checked={filters.selectedUsers.length === mockUsers.length}
+                    checked={filters.selectedUsers.length === users.length && users.length > 0}
                     onChange={() => toggleUser('all')}
                     className="mr-2"
                   />
                   <label htmlFor="all-users">All</label>
                 </div>
                 
-                {mockUsers.map(user => (
+                {users.map(user => (
                   <div key={user.id} className="flex items-center">
                     <input
                       type="checkbox"
@@ -126,7 +157,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                 <div className="flex items-center">
                   <select
                     multiple
-                    disabled={filters.expandUsers}
+                    disabled={filters.expandUsers || isLoading}
                     value={filters.selectedUsers.map(String)}
                     onChange={(e) => {
                       const selectedOptions = Array.from(e.target.selectedOptions, option => parseInt(option.value));
@@ -135,7 +166,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                       if (selectedOptions.includes(0)) {
                         toggleUser('all');
                       } else {
-                        const selectedUsers = mockUsers
+                        const selectedUsers = users
                           .filter(user => selectedOptions.includes(user.id))
                           .map(user => user.id);
                         
@@ -147,7 +178,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                     size={6}
                   >
                     <option value="0">All</option>
-                    {mockUsers.map(user => (
+                    {users.map(user => (
                       <option key={user.id} value={user.id}>
                         {user.name}
                       </option>

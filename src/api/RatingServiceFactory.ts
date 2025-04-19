@@ -1,6 +1,7 @@
 import { RatingServiceConnector } from './RatingServiceConnector';
 import { RestApiConnector } from './RestApiConnector';
 import { MockConnector } from './MockConnector';
+import { JsonFileConnector } from './JsonFileConnector';
 
 /**
  * Enum of available connector types
@@ -8,6 +9,7 @@ import { MockConnector } from './MockConnector';
 export enum ConnectorType {
   MOCK = 'mock',
   REST = 'rest',
+  JSON = 'json',
   // Add more connector types as needed
 }
 
@@ -17,6 +19,7 @@ export enum ConnectorType {
 export interface ConnectorConfig {
   apiUrl?: string;
   authToken?: string;
+  jsonUrl?: string;
   // Add more configuration options as needed
 }
 
@@ -38,6 +41,12 @@ export class RatingServiceFactory {
           throw new Error('API URL is required for REST connector');
         }
         return new RestApiConnector(config.apiUrl, config.authToken);
+      
+      case ConnectorType.JSON:
+        if (!config?.jsonUrl) {
+          throw new Error('JSON URL is required for JSON connector');
+        }
+        return new JsonFileConnector(config.jsonUrl);
         
       case ConnectorType.MOCK:
       default:
@@ -64,6 +73,13 @@ export class RatingServiceFactory {
       return new RestApiConnector(apiUrl, authToken);
     }
     
+    // Check if JSON URL is provided
+    const jsonUrl = import.meta.env.VITE_JSON_URL;
+    if (jsonUrl) {
+      return new JsonFileConnector(jsonUrl);
+    }
+    
+    // Fallback to mock connector
     return new MockConnector();
   }
 }

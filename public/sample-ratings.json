@@ -1,0 +1,283 @@
+{
+  "timestamp": "2025-04-20T17:30:00Z",
+  "users": [
+    { "id": 1, "name": "John DoeD-" },
+    { "id": 2, "name": "Jane Smith" },
+    { "id": 3, "name": "Robert Johnson" },
+    { "id": 4, "name": "Lisa Anderson" },
+    { "id": 5, "name": "Michael Chen" },
+    { "id": 6, "name": "Sarah Williams" },
+    { "id": 7, "name": "David Brown" }
+  ],
+  "categories": [
+    { "id": "all", "name": "All", "range": [-10, 10] },
+    { "id": "positive", "name": "Positive", "range": [1, 6] },
+    { "id": "negative", "name": "Negative", "range": [-6, -1] },
+    { "id": "neutral", "name": "Relatively Neutral", "range": [-3, 3] },
+    { "id": "heavily-positive", "name": "Heavily Positive", "range": [7, 10] },
+    { "id": "heavily-negative", "name": "Heavily Negative", "range": [-10, -7] }
+  ],
+  "ratings": [
+    {
+      "id": 1,
+      "userId": 1,
+      "date": "19/04/2025",
+      "rating": 8,
+      "message": "Very impressed with how the chatbot handled my complex query about API integration.",
+      "conversation": [
+        {
+          "id": 1,
+          "userId": 1,
+          "content": "Can you help me understand how to integrate the new API with my existing system?",
+          "timestamp": "10:03 AM"
+        },
+        {
+          "id": 2,
+          "userId": null,
+          "content": "Certainly! To integrate our API with your existing system, you'll need to follow these steps: 1) Generate an API key in the developer portal, 2) Use our SDK for your programming language, 3) Initialize the client with your API key, 4) Make API calls using the provided methods. Would you like me to walk you through any of these steps in detail?",
+          "timestamp": "10:04 AM"
+        },
+        {
+          "id": 3,
+          "userId": 1,
+          "content": "That's really helpful. Can you tell me more about authentication options?",
+          "timestamp": "10:06 AM"
+        },
+        {
+          "id": 4,
+          "userId": null,
+          "content": "We support multiple authentication methods: API key (passed as a header), OAuth 2.0 for more secure integrations, and JWT tokens for microservices. For your use case, I recommend OAuth 2.0 since you mentioned working with sensitive data. Would you like me to explain how to set up OAuth with our API?",
+          "timestamp": "10:07 AM"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "date": "18/04/2025",
+      "rating": -7,
+      "message": "Extremely frustrating experience. The chatbot kept suggesting irrelevant solutions.",
+      "conversation": [
+        {
+          "id": 1,
+          "userId": 2,
+          "content": "I need help with my billing. I was charged twice this month.",
+          "timestamp": "14:15 PM"
+        },
+        {
+          "id": 2,
+          "userId": null,
+          "content": "I understand you're having trouble with our product. Have you tried restarting your device? Sometimes that can resolve unexpected behavior.",
+          "timestamp": "14:16 PM"
+        },
+        {
+          "id": 3,
+          "userId": 2,
+          "content": "No, this isn't a technical issue. I was double-charged on my credit card for this month's subscription.",
+          "timestamp": "14:17 PM"
+        },
+        {
+          "id": 4,
+          "userId": null,
+          "content": "I see you're having trouble with our software. Let me check if there are any known issues with the latest update. Have you tried clearing your cache?",
+          "timestamp": "14:18 PM"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "date": "17/04/2025",
+      "rating": 3,
+      "message": "Decent response but I still had to contact customer service for a complete answer.",
+      "conversation": null
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "date": "16/04/2025",
+      "rating": 5,
+      "message": "The chatbot was very helpful in answering my question about account settings.",
+      "conversation": null
+    },
+    {
+      "id": 5,
+      "userId": 4,
+      "date": "15/04/2025",
+      "rating": -2,
+      "message": "The responses were very slow today, and I had to repeat my question multiple times.",
+      "conversation": null
+    },
+    {
+      "id": 6,
+      "userId": 5,
+      "date": "15/04/2025",
+      "rating": 9,
+      "message": "Excellent support from the chatbot. It provided detailed information about the new features.",
+      "conversation": [
+        {
+          "id": 1,
+          "userId": 5,
+          "content": "What new features were added in the last update?",
+          "timestamp": "09:32 AM"
+        },
+        {
+          "id": 2,
+          "userId": null,
+          "content": "The latest update includes several exciting new features: 1) Improved dark mode with customizable themes, 2) Advanced analytics dashboard with exportable reports, 3) Integration with third-party tools like Slack and Microsoft Teams, 4) Enhanced keyboard shortcuts for power users, and 5) Voice command capabilities for hands-free operation. Would you like me to elaborate on any of these features?",
+          "timestamp": "09:33 AM"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "userId": 6,
+      "date": "14/04/2025",
+      "rating": -5,
+      "message": "The chatbot didn't seem to understand my question about refund policy.",
+      "conversation": null
+    },
+    {
+      "id": 8,
+      "userId": 7,
+      "date": "13/04/2025",
+      "rating": 6,
+      "message": "I appreciate how the chatbot guided me through the setup process step by step.",
+      "conversation": null
+    },
+    {
+      "id": 9,
+      "userId": 3,
+      "date": "12/04/2025",
+      "rating": 4,
+      "message": "The suggested solutions were spot on! Saved me a lot of time troubleshooting.",
+      "conversation": null
+    },
+    {
+      "id": 10,
+      "userId": 2,
+      "date": "11/04/2025",
+      "rating": -8,
+      "message": "Couldn't get a clear answer to my shipping question, had to contact support instead.",
+      "conversation": null
+    },
+    {
+      "id": 11,
+      "userId": 4,
+      "date": "10/04/2025",
+      "rating": 7,
+      "message": "Great experience! The chatbot quickly resolved my issue with password reset.",
+      "conversation": [
+        {
+          "id": 1,
+          "userId": 4,
+          "content": "I forgot my password and need to reset it.",
+          "timestamp": "16:45 PM"
+        },
+        {
+          "id": 2,
+          "userId": null,
+          "content": "I'd be happy to help you reset your password. To get started, please go to the login page and click on the 'Forgot Password' link. You'll receive an email with instructions to create a new password. Would you like me to guide you through the process step by step?",
+          "timestamp": "16:46 PM"
+        },
+        {
+          "id": 3,
+          "userId": 4,
+          "content": "I clicked the link but I'm not receiving the email.",
+          "timestamp": "16:50 PM"
+        },
+        {
+          "id": 4,
+          "userId": null,
+          "content": "I understand that can be frustrating. Let's try a few troubleshooting steps: 1) Check your spam/junk folder, 2) Make sure you're using the email address associated with your account, 3) Allow a few minutes for the email to arrive. If you still don't receive it after these steps, I can help you with an alternative verification method. Would you like to try that now?",
+          "timestamp": "16:51 PM"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "userId": 5,
+      "date": "09/04/2025",
+      "rating": -4,
+      "message": "I had trouble getting the bot to understand what I was asking about billing information.",
+      "conversation": null
+    },
+    {
+      "id": 13,
+      "userId": 1,
+      "date": "09/04/2025",
+      "rating": 10,
+      "message": "Pleasantly surprised by how human-like and helpful the responses were.",
+      "conversation": null
+    },
+    {
+      "id": 14,
+      "userId": 6,
+      "date": "08/04/2025",
+      "rating": 2,
+      "message": "The response was accurate but took too many steps to get to the information I needed.",
+      "conversation": null
+    },
+    {
+      "id": 15,
+      "userId": 7,
+      "date": "07/04/2025",
+      "rating": -9,
+      "message": "The chatbot was completely unhelpful with my technical issue.",
+      "conversation": null
+    },
+    {
+      "id": 16,
+      "userId": 3,
+      "date": "07/04/2025",
+      "rating": 8,
+      "message": "The chatbot provided clear instructions on how to solve my issue.",
+      "conversation": null
+    },
+    {
+      "id": 17,
+      "userId": 2,
+      "date": "06/04/2025",
+      "rating": 0,
+      "message": "The chatbot was neither helpful nor unhelpful. It just gave generic answers.",
+      "conversation": null
+    },
+    {
+      "id": 18,
+      "userId": 4,
+      "date": "05/04/2025",
+      "rating": 5,
+      "message": "The chatbot handled my request reasonably well.",
+      "conversation": null
+    },
+    {
+      "id": 19,
+      "userId": 5,
+      "date": "04/04/2025",
+      "rating": -3,
+      "message": "The chatbot was a bit slow to respond but eventually answered my question.",
+      "conversation": null
+    },
+    {
+      "id": 20,
+      "userId": 6,
+      "date": "03/04/2025",
+      "rating": 9,
+      "message": "Exceptional service! The chatbot understood my complex problem immediately.",
+      "conversation": [
+        {
+          "id": 1,
+          "userId": 6,
+          "content": "I'm trying to figure out why my custom workflow automation isn't triggering properly when I have conditional logic based on user roles.",
+          "timestamp": "11:22 AM"
+        },
+        {
+          "id": 2,
+          "userId": null,
+          "content": "This sounds like an issue with role-based permission inheritance in the workflow trigger conditions. When you have conditional logic based on user roles, the system checks both direct role assignments and inherited permissions. This can sometimes cause unexpected behavior if the inheritance tree is complex. Let me walk you through how to debug this: First, check the role definitions in your admin panel to verify the inheritance structure. Then, examine the logs with the workflow_debug flag enabled to see exactly which condition is failing. Would you like me to explain how to enable debug mode for workflows?",
+          "timestamp": "11:23 AM"
+        }
+      ]
+    }
+  ]
+}
