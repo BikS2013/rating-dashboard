@@ -57,18 +57,28 @@ export const FilterProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   useEffect(() => {
     if (filters.selectedTimePeriod === 'custom') return;
     
-    const today = new Date('2025-04-19'); // Use fixed date for consistency
-    const timePeriod = timePeriodOptions.find(tp => tp.id === filters.selectedTimePeriod);
-    
-    if (timePeriod && timePeriod.days !== null) {
-      const fromDateObj = new Date(today);
-      fromDateObj.setDate(today.getDate() - timePeriod.days + 1);
+    try {
+      const today = new Date('2025-04-19'); // Use fixed date for consistency
+      const timePeriod = timePeriodOptions.find(tp => tp.id === filters.selectedTimePeriod);
       
-      setFilters({
-        ...filters,
-        fromDate: formatDate(fromDateObj),
-        toDate: formatDate(today),
-      });
+      if (timePeriod && timePeriod.days !== null) {
+        const fromDateObj = new Date(today);
+        fromDateObj.setDate(today.getDate() - timePeriod.days + 1);
+        
+        console.log(`Updating date range for ${filters.selectedTimePeriod}:`, {
+          from: formatDate(fromDateObj),
+          to: formatDate(today)
+        });
+        
+        // Use functional update to avoid dependency on filters
+        setFilters(prev => ({
+          ...prev,
+          fromDate: formatDate(fromDateObj),
+          toDate: formatDate(today),
+        }));
+      }
+    } catch (error) {
+      console.error('Error updating dates for time period:', error);
     }
   }, [filters.selectedTimePeriod]);
 

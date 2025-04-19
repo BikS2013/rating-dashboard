@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import FilterSummary from './FilterSummary';
 import RatingBarChart from './RatingBarChart';
+import SimpleBarChart from './SimpleBarChart';
 import RatingSummary from './RatingSummary';
 import DetailedView from './DetailedView';
 import { useFilter } from '../../context/FilterContext';
@@ -28,9 +29,19 @@ const Dashboard: React.FC<DashboardProps> = ({ sidebarCollapsed, sidebarWidth })
   useEffect(() => {
     const loadData = async () => {
       try {
+        console.log('Loading data with filters:', JSON.stringify(filters));
         setIsLoading(true);
+        
+        // Don't clear previous data immediately - keep showing it while loading
         const ratings = await ratingService.getRatings(filters);
-        setRatingsData(ratings);
+        
+        // Only update if we received data
+        if (ratings && ratings.length > 0) {
+          console.log(`Loaded ${ratings.length} ratings successfully`);
+          setRatingsData(ratings);
+        } else {
+          console.warn('Received empty ratings array from service');
+        }
       } catch (error) {
         console.error('Error loading ratings:', error);
       } finally {
@@ -45,23 +56,36 @@ const Dashboard: React.FC<DashboardProps> = ({ sidebarCollapsed, sidebarWidth })
   const handleRefresh = async () => {
     try {
       setRefreshing(true);
+      
+      console.log('Refreshing data from connector:', ratingService.getBaseUrl());
+      
       // Force refresh the connector data if the method exists
       if (ratingService.forceRefresh) {
         await ratingService.forceRefresh();
+        console.log('Forced connector refresh completed');
       }
       
       // Reload the users first
-      await ratingService.getUsers();
+      const users = await ratingService.getUsers();
+      console.log(`Reloaded ${users.length} users`);
       
       // Then reload the ratings data
       const ratings = await ratingService.getRatings(filters);
-      setRatingsData(ratings);
+      console.log(`Reloaded ${ratings.length} ratings`);
+      
+      // Update state with new data
+      if (ratings && ratings.length > 0) {
+        setRatingsData(ratings);
+        console.log('Updated ratings data in state');
+      } else {
+        console.warn('Received empty ratings array on refresh');
+      }
       
       // Log connector info
       console.log('Using connector:', ratingService.getBaseUrl());
       
-      // Force a page reload to refresh all components
-      window.location.reload();
+      // REMOVED: Don't force a page reload as it clears the state
+      // This was likely causing the chart to disappear
     } catch (error) {
       console.error('Error refreshing data:', error);
     } finally {
@@ -134,7 +158,8 @@ const Dashboard: React.FC<DashboardProps> = ({ sidebarCollapsed, sidebarWidth })
         {/* Rating Bar Chart */}
         <div className="mt-3 bg-white p-4 rounded-lg shadow">
           <h2 className="text-lg font-semibold mb-2">Rating Distribution Over Time</h2>
-          <RatingBarChart ratings={ratingsData} />
+          {/* Use the simplified chart to ensure stability */}
+          <SimpleBarChart ratings={ratingsData} />
         </div>
         
         {/* Rating Summary Area */}
