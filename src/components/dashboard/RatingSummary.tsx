@@ -32,15 +32,15 @@ const RatingSummary: React.FC<RatingSummaryProps> = ({ filteredRatings }) => {
   };
   
   return (
-    <div className="mx-4 mt-4">
+    <div className="mt-3">
       <h2 className="text-lg font-semibold mb-2">Rating Summary</h2>
       
       {Object.keys(summaryData).length > 0 ? (
-        <div className="flex space-x-4 overflow-x-auto pb-2">
+        <div className="flex gap-2 overflow-x-auto pb-2">
           {Object.entries(summaryData).map(([category, count]) => (
             <button
               key={category}
-              className={`p-4 rounded-lg border-l-4 min-w-32 text-center cursor-pointer transition-all ${
+              className={`p-3 rounded-lg border-l-4 min-w-28 text-center cursor-pointer transition-all ${
                 dashboardState.selectedCategory === category
                   ? `bg-gray-200 border-blue-500 font-medium`
                   : `${categoryColors[category]} hover:bg-opacity-80`

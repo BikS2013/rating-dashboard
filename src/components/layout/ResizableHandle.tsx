@@ -32,16 +32,19 @@ const ResizableHandle: React.FC<ResizableHandleProps> = ({
     
     const handleMouseUp = () => {
       setIsDragging(false);
+      document.body.style.cursor = 'default';
     };
     
     if (isDragging) {
       document.addEventListener('mousemove', handleMouseMove);
       document.addEventListener('mouseup', handleMouseUp);
+      document.body.style.cursor = 'col-resize';
     }
     
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseup', handleMouseUp);
+      document.body.style.cursor = 'default';
     };
   }, [isDragging, onResize, minWidth, maxWidth]);
   

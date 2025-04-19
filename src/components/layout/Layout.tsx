@@ -17,7 +17,7 @@ const Layout: React.FC = () => {
   }, []);
   
   return (
-    <div className="flex h-screen overflow-hidden">
+    <div className="h-screen overflow-hidden relative">
       <Sidebar 
         collapsed={sidebarCollapsed} 
         toggleSidebar={toggleSidebar} 
@@ -26,7 +26,10 @@ const Layout: React.FC = () => {
         minWidth={minWidth}
         maxWidth={maxWidth}
       />
-      <Dashboard sidebarCollapsed={sidebarCollapsed} sidebarWidth={sidebarWidth} />
+      <Dashboard 
+        sidebarCollapsed={sidebarCollapsed} 
+        sidebarWidth={sidebarWidth} 
+      />
     </div>
   );
 };

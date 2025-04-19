@@ -37,8 +37,16 @@ const Sidebar: React.FC<SidebarProps> = ({
   
   return (
     <div
-      className={`bg-gray-800 text-white h-screen sidebar-transition relative flex flex-col`}
-      style={{ width: `${sidebarWidth}px` }}
+      className="bg-gray-800 text-white h-screen relative flex flex-col"
+      style={{ 
+        width: `${sidebarWidth}px`,
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        bottom: 0,
+        zIndex: 10,
+        transition: 'width 0.3s ease-in-out'
+      }}
     >
       {/* Sidebar Header with Toggle Button */}
       <div className="flex justify-between items-center p-4 border-b border-gray-700">

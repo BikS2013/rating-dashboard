@@ -24,10 +24,10 @@ const FilterSummary: React.FC = () => {
       }).filter(Boolean);
   
   return (
-    <div className="bg-gray-100 p-4 border-b border-gray-200">
-      <h1 className="text-xl font-bold mb-2">Chatbot Rating Dashboard</h1>
+    <div className="bg-gray-100 py-2 px-3 border-b border-gray-200">
+      <h1 className="text-xl font-bold mb-1">Chatbot Rating Dashboard</h1>
       
-      <div className="flex flex-wrap gap-4">
+      <div className="flex flex-wrap gap-3 text-sm">
         <div>
           <span className="font-medium">Users:</span>{' '}
           {selectedUserNames.length > 0
