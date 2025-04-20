@@ -4,1399 +4,1399 @@
     "userId": 1,
     "date": "01/02/2025",
     "rating": 7,
-    "message": "The chatbot was very helpful today in explaining the new features."
+    "feedback": "The chatbot was very helpful today in explaining the new features."
   },
   {
     "id": 22,
     "userId": 2,
     "date": "02/02/2025",
     "rating": -3,
-    "message": "It took several attempts to get the chatbot to understand my question about shipping policies."
+    "feedback": "It took several attempts to get the chatbot to understand my question about shipping policies."
   },
   {
     "id": 23,
     "userId": 3,
     "date": "03/02/2025",
     "rating": 5,
-    "message": "Good responses to my account questions, though a bit slow."
+    "feedback": "Good responses to my account questions, though a bit slow."
   },
   {
     "id": 24,
     "userId": 4,
     "date": "04/02/2025",
     "rating": 9,
-    "message": "Excellent support! The chatbot helped me resolve a complex issue with my subscription."
+    "feedback": "Excellent support! The chatbot helped me resolve a complex issue with my subscription."
   },
   {
     "id": 25,
     "userId": 5,
     "date": "05/02/2025",
     "rating": -2,
-    "message": "The chatbot gave me basic information but couldn't handle my specific case."
+    "feedback": "The chatbot gave me basic information but couldn't handle my specific case."
   },
   {
     "id": 26,
     "userId": 6,
     "date": "06/02/2025",
     "rating": 4,
-    "message": "Decent responses, but I had to rephrase my questions several times."
+    "feedback": "Decent responses, but I had to rephrase my questions several times."
   },
   {
     "id": 27,
     "userId": 7,
     "date": "07/02/2025",
     "rating": -7,
-    "message": "Very frustrating experience. The chatbot kept misunderstanding my simple questions."
+    "feedback": "Very frustrating experience. The chatbot kept misunderstanding my simple questions."
   },
   {
     "id": 28,
     "userId": 1,
     "date": "08/02/2025",
     "rating": 3,
-    "message": "The chatbot was moderately helpful with my product questions."
+    "feedback": "The chatbot was moderately helpful with my product questions."
   },
   {
     "id": 29,
     "userId": 2,
     "date": "09/02/2025",
     "rating": 8,
-    "message": "Great experience! The chatbot provided detailed information about the new product features."
+    "feedback": "Great experience! The chatbot provided detailed information about the new product features."
   },
   {
     "id": 30,
     "userId": 3,
     "date": "10/02/2025",
     "rating": -4,
-    "message": "The chatbot struggled to understand my refund request."
+    "feedback": "The chatbot struggled to understand my refund request."
   },
   {
     "id": 31,
     "userId": 4,
     "date": "11/02/2025",
     "rating": 6,
-    "message": "The chatbot was quite helpful in guiding me through the setup process."
+    "feedback": "The chatbot was quite helpful in guiding me through the setup process."
   },
   {
     "id": 32,
     "userId": 5,
     "date": "12/02/2025",
     "rating": -9,
-    "message": "Terrible experience. The chatbot gave me completely wrong information about my order status."
+    "feedback": "Terrible experience. The chatbot gave me completely wrong information about my order status."
   },
   {
     "id": 33,
     "userId": 6,
     "date": "13/02/2025",
     "rating": 2,
-    "message": "The chatbot answered my basic questions but couldn't help with more complex issues."
+    "feedback": "The chatbot answered my basic questions but couldn't help with more complex issues."
   },
   {
     "id": 34,
     "userId": 7,
     "date": "14/02/2025",
     "rating": 10,
-    "message": "Extremely impressed with the chatbot's ability to solve my technical problem so quickly!"
+    "feedback": "Extremely impressed with the chatbot's ability to solve my technical problem so quickly!"
   },
   {
     "id": 35,
     "userId": 1,
     "date": "15/02/2025",
     "rating": -1,
-    "message": "The responses were ok but a bit generic."
+    "feedback": "The responses were ok but a bit generic."
   },
   {
     "id": 36,
     "userId": 2,
     "date": "16/02/2025",
     "rating": 9,
-    "message": "Very impressed with how the chatbot handled my complex billing inquiry."
+    "feedback": "Very impressed with how the chatbot handled my complex billing inquiry."
   },
   {
     "id": 37,
     "userId": 3,
     "date": "17/02/2025",
     "rating": -5,
-    "message": "The chatbot couldn't understand my basic request about changing my password."
+    "feedback": "The chatbot couldn't understand my basic request about changing my password."
   },
   {
     "id": 38,
     "userId": 4,
     "date": "18/02/2025",
     "rating": 7,
-    "message": "The chatbot provided clear, helpful guidance on using the new features."
+    "feedback": "The chatbot provided clear, helpful guidance on using the new features."
   },
   {
     "id": 39,
     "userId": 5,
     "date": "19/02/2025",
     "rating": 0,
-    "message": "Neither good nor bad. The chatbot provided standard answers."
+    "feedback": "Neither good nor bad. The chatbot provided standard answers."
   },
   {
     "id": 40,
     "userId": 6,
     "date": "20/02/2025",
     "rating": -8,
-    "message": "Very unhelpful. The chatbot kept suggesting irrelevant solutions to my problem."
+    "feedback": "Very unhelpful. The chatbot kept suggesting irrelevant solutions to my problem."
   },
   {
     "id": 41,
     "userId": 7,
     "date": "21/02/2025",
     "rating": 5,
-    "message": "Satisfactory experience. The chatbot answered most of my questions adequately."
+    "feedback": "Satisfactory experience. The chatbot answered most of my questions adequately."
   },
   {
     "id": 42,
     "userId": 1,
     "date": "22/02/2025",
     "rating": -3,
-    "message": "The chatbot was slow to respond and didn't fully address my concerns."
+    "feedback": "The chatbot was slow to respond and didn't fully address my concerns."
   },
   {
     "id": 43,
     "userId": 2,
     "date": "23/02/2025",
     "rating": 8,
-    "message": "Excellent support! The chatbot provided detailed instructions for troubleshooting."
+    "feedback": "Excellent support! The chatbot provided detailed instructions for troubleshooting."
   },
   {
     "id": 44,
     "userId": 3,
     "date": "24/02/2025",
     "rating": 1,
-    "message": "Barely helpful. The chatbot only managed to answer the simplest questions."
+    "feedback": "Barely helpful. The chatbot only managed to answer the simplest questions."
   },
   {
     "id": 45,
     "userId": 4,
     "date": "25/02/2025",
     "rating": 6,
-    "message": "Good experience overall. The chatbot was helpful and polite."
+    "feedback": "Good experience overall. The chatbot was helpful and polite."
   },
   {
     "id": 46,
     "userId": 5,
     "date": "26/02/2025",
     "rating": -7,
-    "message": "Very frustrating. The chatbot kept misinterpreting my questions about account settings."
+    "feedback": "Very frustrating. The chatbot kept misinterpreting my questions about account settings."
   },
   {
     "id": 47,
     "userId": 6,
     "date": "27/02/2025",
     "rating": 3,
-    "message": "The chatbot was somewhat helpful but required a lot of clarification."
+    "feedback": "The chatbot was somewhat helpful but required a lot of clarification."
   },
   {
     "id": 48,
     "userId": 7,
     "date": "28/02/2025",
     "rating": 9,
-    "message": "Fantastic support! The chatbot quickly resolved my issue with payment processing."
+    "feedback": "Fantastic support! The chatbot quickly resolved my issue with payment processing."
   },
   {
     "id": 49,
     "userId": 1,
     "date": "01/03/2025",
     "rating": -2,
-    "message": "The chatbot struggled to understand my simple question about shipping times."
+    "feedback": "The chatbot struggled to understand my simple question about shipping times."
   },
   {
     "id": 50,
     "userId": 2,
     "date": "02/03/2025",
     "rating": 7,
-    "message": "The chatbot was very helpful in explaining the new privacy policy changes."
+    "feedback": "The chatbot was very helpful in explaining the new privacy policy changes."
   },
   {
     "id": 51,
     "userId": 3,
     "date": "03/03/2025",
     "rating": -9,
-    "message": "Awful experience. The chatbot gave me completely incorrect information."
+    "feedback": "Awful experience. The chatbot gave me completely incorrect information."
   },
   {
     "id": 52,
     "userId": 4,
     "date": "04/03/2025",
     "rating": 4,
-    "message": "Decent but not great. The chatbot was able to help with basic inquiries."
+    "feedback": "Decent but not great. The chatbot was able to help with basic inquiries."
   },
   {
     "id": 53,
     "userId": 5,
     "date": "05/03/2025",
     "rating": 10,
-    "message": "Outstanding! The chatbot perfectly solved my complex technical issue in minutes."
+    "feedback": "Outstanding! The chatbot perfectly solved my complex technical issue in minutes."
   },
   {
     "id": 54,
     "userId": 6,
     "date": "06/03/2025",
     "rating": -1,
-    "message": "The chatbot was slightly below average in helping with my product questions."
+    "feedback": "The chatbot was slightly below average in helping with my product questions."
   },
   {
     "id": 55,
     "userId": 7,
     "date": "07/03/2025",
     "rating": 6,
-    "message": "Pretty good service. The chatbot walked me through the return process clearly."
+    "feedback": "Pretty good service. The chatbot walked me through the return process clearly."
   },
   {
     "id": 56,
     "userId": 1,
     "date": "08/03/2025",
     "rating": -6,
-    "message": "Disappointing. The chatbot wasn't able to help with my billing inquiry at all."
+    "feedback": "Disappointing. The chatbot wasn't able to help with my billing inquiry at all."
   },
   {
     "id": 57,
     "userId": 2,
     "date": "09/03/2025",
     "rating": 2,
-    "message": "The chatbot provided only minimal help with my questions."
+    "feedback": "The chatbot provided only minimal help with my questions."
   },
   {
     "id": 58,
     "userId": 3,
     "date": "10/03/2025",
     "rating": 8,
-    "message": "Very helpful! The chatbot provided detailed instructions for setting up my account."
+    "feedback": "Very helpful! The chatbot provided detailed instructions for setting up my account."
   },
   {
     "id": 59,
     "userId": 4,
     "date": "11/03/2025",
     "rating": -4,
-    "message": "The chatbot was confused by my straightforward question about product specifications."
+    "feedback": "The chatbot was confused by my straightforward question about product specifications."
   },
   {
     "id": 60,
     "userId": 5,
     "date": "12/03/2025",
     "rating": 5,
-    "message": "Satisfactory. The chatbot answered most of my questions about the subscription plan."
+    "feedback": "Satisfactory. The chatbot answered most of my questions about the subscription plan."
   },
   {
     "id": 61,
     "userId": 6,
     "date": "13/03/2025",
     "rating": -10,
-    "message": "Completely useless. The chatbot couldn't understand even the simplest questions."
+    "feedback": "Completely useless. The chatbot couldn't understand even the simplest questions."
   },
   {
     "id": 62,
     "userId": 7,
     "date": "14/03/2025",
     "rating": 3,
-    "message": "The chatbot was moderately helpful but slow to respond."
+    "feedback": "The chatbot was moderately helpful but slow to respond."
   },
   {
     "id": 63,
     "userId": 1,
     "date": "15/03/2025",
     "rating": 9,
-    "message": "Excellent service! The chatbot quickly resolved my issue with account access."
+    "feedback": "Excellent service! The chatbot quickly resolved my issue with account access."
   },
   {
     "id": 64,
     "userId": 2,
     "date": "16/03/2025",
     "rating": -3,
-    "message": "The chatbot provided some help but misunderstood several of my questions."
+    "feedback": "The chatbot provided some help but misunderstood several of my questions."
   },
   {
     "id": 65,
     "userId": 3,
     "date": "17/03/2025",
     "rating": 7,
-    "message": "Very good experience. The chatbot was knowledgeable about the product features."
+    "feedback": "Very good experience. The chatbot was knowledgeable about the product features."
   },
   {
     "id": 66,
     "userId": 4,
     "date": "18/03/2025",
     "rating": -8,
-    "message": "Extremely frustrating. The chatbot kept providing irrelevant information."
+    "feedback": "Extremely frustrating. The chatbot kept providing irrelevant information."
   },
   {
     "id": 67,
     "userId": 5,
     "date": "19/03/2025",
     "rating": 1,
-    "message": "Barely acceptable. The chatbot only managed to answer my simplest question."
+    "feedback": "Barely acceptable. The chatbot only managed to answer my simplest question."
   },
   {
     "id": 68,
     "userId": 6,
     "date": "20/03/2025",
     "rating": 6,
-    "message": "Good overall. The chatbot provided helpful information about the new features."
+    "feedback": "Good overall. The chatbot provided helpful information about the new features."
   },
   {
     "id": 69,
     "userId": 7,
     "date": "21/03/2025",
     "rating": -5,
-    "message": "Not helpful. The chatbot couldn't understand my specific needs."
+    "feedback": "Not helpful. The chatbot couldn't understand my specific needs."
   },
   {
     "id": 70,
     "userId": 1,
     "date": "22/03/2025",
     "rating": 8,
-    "message": "Great service! The chatbot effectively walked me through the troubleshooting process."
+    "feedback": "Great service! The chatbot effectively walked me through the troubleshooting process."
   },
   {
     "id": 71,
     "userId": 2,
     "date": "23/03/2025",
     "rating": 0,
-    "message": "Neutral experience. The chatbot was neither helpful nor unhelpful."
+    "feedback": "Neutral experience. The chatbot was neither helpful nor unhelpful."
   },
   {
     "id": 72,
     "userId": 3,
     "date": "24/03/2025",
     "rating": -7,
-    "message": "Very poor service. The chatbot gave me incorrect information about my order status."
+    "feedback": "Very poor service. The chatbot gave me incorrect information about my order status."
   },
   {
     "id": 73,
     "userId": 4,
     "date": "25/03/2025",
     "rating": 4,
-    "message": "The chatbot was somewhat helpful with my product inquiry."
+    "feedback": "The chatbot was somewhat helpful with my product inquiry."
   },
   {
     "id": 74,
     "userId": 5,
     "date": "26/03/2025",
     "rating": 10,
-    "message": "Exceptional service! The chatbot perfectly understood my complex problem and solved it quickly."
+    "feedback": "Exceptional service! The chatbot perfectly understood my complex problem and solved it quickly."
   },
   {
     "id": 75,
     "userId": 6,
     "date": "27/03/2025",
     "rating": -2,
-    "message": "The chatbot was a bit slow and didn't fully address my concerns."
+    "feedback": "The chatbot was a bit slow and didn't fully address my concerns."
   },
   {
     "id": 76,
     "userId": 7,
     "date": "28/03/2025",
     "rating": 5,
-    "message": "Pretty good. The chatbot provided clear answers to my questions about the return policy."
+    "feedback": "Pretty good. The chatbot provided clear answers to my questions about the return policy."
   },
   {
     "id": 77,
     "userId": 1,
     "date": "29/03/2025",
     "rating": -9,
-    "message": "Terrible experience. The chatbot completely misunderstood my request and wasted my time."
+    "feedback": "Terrible experience. The chatbot completely misunderstood my request and wasted my time."
   },
   {
     "id": 78,
     "userId": 2,
     "date": "30/03/2025",
     "rating": 3,
-    "message": "The chatbot provided basic help but couldn't handle my specific situation."
+    "feedback": "The chatbot provided basic help but couldn't handle my specific situation."
   },
   {
     "id": 79,
     "userId": 3,
     "date": "31/03/2025",
     "rating": 9,
-    "message": "Excellent support! The chatbot resolved my issue quickly and efficiently."
+    "feedback": "Excellent support! The chatbot resolved my issue quickly and efficiently."
   },
   {
     "id": 80,
     "userId": 4,
     "date": "01/04/2025",
     "rating": -1,
-    "message": "The chatbot's responses were slightly unhelpful and generic."
+    "feedback": "The chatbot's responses were slightly unhelpful and generic."
   },
   {
     "id": 81,
     "userId": 5,
     "date": "02/04/2025",
     "rating": 7,
-    "message": "Very good experience. The chatbot provided detailed answers to all my questions."
+    "feedback": "Very good experience. The chatbot provided detailed answers to all my questions."
   },
   {
     "id": 82,
     "userId": 6,
     "date": "03/04/2025",
     "rating": -6,
-    "message": "Disappointing. The chatbot couldn't help me resolve my billing issue."
+    "feedback": "Disappointing. The chatbot couldn't help me resolve my billing issue."
   },
   {
     "id": 83,
     "userId": 7,
     "date": "04/04/2025",
     "rating": 2,
-    "message": "The chatbot was minimally helpful with my inquiry."
+    "feedback": "The chatbot was minimally helpful with my inquiry."
   },
   {
     "id": 84,
     "userId": 1,
     "date": "05/04/2025",
     "rating": 8,
-    "message": "Great experience! The chatbot effectively guided me through the setup process."
+    "feedback": "Great experience! The chatbot effectively guided me through the setup process."
   },
   {
     "id": 85,
     "userId": 2,
     "date": "06/04/2025",
     "rating": -4,
-    "message": "The chatbot misunderstood my simple question about shipping options."
+    "feedback": "The chatbot misunderstood my simple question about shipping options."
   },
   {
     "id": 86,
     "userId": 3,
     "date": "07/04/2025",
     "rating": 6,
-    "message": "Good service. The chatbot was polite and provided helpful information."
+    "feedback": "Good service. The chatbot was polite and provided helpful information."
   },
   {
     "id": 87,
     "userId": 4,
     "date": "08/04/2025",
     "rating": -10,
-    "message": "Completely useless. The chatbot was unable to understand or help with any of my questions."
+    "feedback": "Completely useless. The chatbot was unable to understand or help with any of my questions."
   },
   {
     "id": 88,
     "userId": 5,
     "date": "09/04/2025",
     "rating": 1,
-    "message": "The chatbot barely helped with my basic inquiry."
+    "feedback": "The chatbot barely helped with my basic inquiry."
   },
   {
     "id": 89,
     "userId": 6,
     "date": "10/04/2025",
     "rating": 9,
-    "message": "Excellent support! The chatbot quickly solved my problem with account verification."
+    "feedback": "Excellent support! The chatbot quickly solved my problem with account verification."
   },
   {
     "id": 90,
     "userId": 7,
     "date": "11/04/2025",
     "rating": -3,
-    "message": "The chatbot was somewhat unhelpful and confused by my questions."
+    "feedback": "The chatbot was somewhat unhelpful and confused by my questions."
   },
   {
     "id": 91,
     "userId": 1,
     "date": "12/04/2025",
     "rating": 5,
-    "message": "Decent experience. The chatbot provided adequate answers to my questions."
+    "feedback": "Decent experience. The chatbot provided adequate answers to my questions."
   },
   {
     "id": 92,
     "userId": 2,
     "date": "13/04/2025",
     "rating": -8,
-    "message": "Very frustrating. The chatbot kept misinterpreting my straightforward questions."
+    "feedback": "Very frustrating. The chatbot kept misinterpreting my straightforward questions."
   },
   {
     "id": 93,
     "userId": 3,
     "date": "14/04/2025",
     "rating": 4,
-    "message": "The chatbot was somewhat helpful but required multiple clarifications."
+    "feedback": "The chatbot was somewhat helpful but required multiple clarifications."
   },
   {
     "id": 94,
     "userId": 4,
     "date": "15/04/2025",
     "rating": 10,
-    "message": "Outstanding service! The chatbot perfectly understood and solved my complex issue."
+    "feedback": "Outstanding service! The chatbot perfectly understood and solved my complex issue."
   },
   {
     "id": 95,
     "userId": 5,
     "date": "16/04/2025",
     "rating": -2,
-    "message": "The chatbot was slightly unhelpful with my product inquiry."
+    "feedback": "The chatbot was slightly unhelpful with my product inquiry."
   },
   {
     "id": 96,
     "userId": 6,
     "date": "17/04/2025",
     "rating": 7,
-    "message": "Very good. The chatbot provided thorough information about the service options."
+    "feedback": "Very good. The chatbot provided thorough information about the service options."
   },
   {
     "id": 97,
     "userId": 7,
     "date": "18/04/2025",
     "rating": -5,
-    "message": "Not helpful. The chatbot couldn't assist with my specific requirements."
+    "feedback": "Not helpful. The chatbot couldn't assist with my specific requirements."
   },
   {
     "id": 98,
     "userId": 1,
     "date": "19/04/2025",
     "rating": 3,
-    "message": "The chatbot was moderately helpful but slow to understand my needs."
+    "feedback": "The chatbot was moderately helpful but slow to understand my needs."
   },
   {
     "id": 99,
     "userId": 2,
     "date": "01/01/2025",
     "rating": 8,
-    "message": "Great experience! The chatbot effectively guided me through the process."
+    "feedback": "Great experience! The chatbot effectively guided me through the process."
   },
   {
     "id": 100,
     "userId": 3,
     "date": "02/01/2025",
     "rating": -7,
-    "message": "Very unhelpful. The chatbot couldn't understand my basic questions."
+    "feedback": "Very unhelpful. The chatbot couldn't understand my basic questions."
   },
   {
     "id": 101,
     "userId": 4,
     "date": "03/01/2025",
     "rating": 2,
-    "message": "The chatbot provided minimal assistance with my inquiry."
+    "feedback": "The chatbot provided minimal assistance with my inquiry."
   },
   {
     "id": 102,
     "userId": 5,
     "date": "04/01/2025",
     "rating": 9,
-    "message": "Excellent support! The chatbot was knowledgeable and efficient."
+    "feedback": "Excellent support! The chatbot was knowledgeable and efficient."
   },
   {
     "id": 103,
     "userId": 6,
     "date": "05/01/2025",
     "rating": -1,
-    "message": "The chatbot's responses were slightly unhelpful and too generic."
+    "feedback": "The chatbot's responses were slightly unhelpful and too generic."
   },
   {
     "id": 104,
     "userId": 7,
     "date": "06/01/2025",
     "rating": 6,
-    "message": "Good experience. The chatbot provided helpful information about the product features."
+    "feedback": "Good experience. The chatbot provided helpful information about the product features."
   },
   {
     "id": 105,
     "userId": 1,
     "date": "07/01/2025",
     "rating": -9,
-    "message": "Terrible experience. The chatbot gave me completely wrong information about my order."
+    "feedback": "Terrible experience. The chatbot gave me completely wrong information about my order."
   },
   {
     "id": 106,
     "userId": 2,
     "date": "08/01/2025",
     "rating": 4,
-    "message": "The chatbot was somewhat helpful with my account questions."
+    "feedback": "The chatbot was somewhat helpful with my account questions."
   },
   {
     "id": 107,
     "userId": 3,
     "date": "09/01/2025",
     "rating": 10,
-    "message": "Exceptional service! The chatbot perfectly handled my complex issue with payment processing."
+    "feedback": "Exceptional service! The chatbot perfectly handled my complex issue with payment processing."
   },
   {
     "id": 108,
     "userId": 4,
     "date": "10/01/2025",
     "rating": -3,
-    "message": "The chatbot was a bit unhelpful and didn't fully understand my questions."
+    "feedback": "The chatbot was a bit unhelpful and didn't fully understand my questions."
   },
   {
     "id": 109,
     "userId": 5,
     "date": "11/01/2025",
     "rating": 5,
-    "message": "Satisfactory experience. The chatbot answered most of my questions adequately."
+    "feedback": "Satisfactory experience. The chatbot answered most of my questions adequately."
   },
   {
     "id": 110,
     "userId": 6,
     "date": "12/01/2025",
     "rating": -6,
-    "message": "Disappointing. The chatbot couldn't help me with my specific problem."
+    "feedback": "Disappointing. The chatbot couldn't help me with my specific problem."
   },
   {
     "id": 111,
     "userId": 7,
     "date": "13/01/2025",
     "rating": 1,
-    "message": "The chatbot barely helped with my basic questions."
+    "feedback": "The chatbot barely helped with my basic questions."
   },
   {
     "id": 112,
     "userId": 1,
     "date": "14/01/2025",
     "rating": 7,
-    "message": "Very good service. The chatbot provided detailed information about my account status."
+    "feedback": "Very good service. The chatbot provided detailed information about my account status."
   },
   {
     "id": 113,
     "userId": 2,
     "date": "15/01/2025",
     "rating": -10,
-    "message": "Completely useless. The chatbot couldn't understand even my simplest questions."
+    "feedback": "Completely useless. The chatbot couldn't understand even my simplest questions."
   },
   {
     "id": 114,
     "userId": 3,
     "date": "16/01/2025",
     "rating": 3,
-    "message": "The chatbot was moderately helpful but required a lot of clarification."
+    "feedback": "The chatbot was moderately helpful but required a lot of clarification."
   },
   {
     "id": 115,
     "userId": 4,
     "date": "17/01/2025",
     "rating": 8,
-    "message": "Great experience! The chatbot quickly resolved my issue with the website login."
+    "feedback": "Great experience! The chatbot quickly resolved my issue with the website login."
   },
   {
     "id": 116,
     "userId": 5,
     "date": "18/01/2025",
     "rating": -4,
-    "message": "The chatbot had trouble understanding my straightforward questions about delivery."
+    "feedback": "The chatbot had trouble understanding my straightforward questions about delivery."
   },
   {
     "id": 117,
     "userId": 6,
     "date": "19/01/2025",
     "rating": 0,
-    "message": "Neither helpful nor unhelpful. The chatbot provided very generic responses."
+    "feedback": "Neither helpful nor unhelpful. The chatbot provided very generic responses."
   },
   {
     "id": 118,
     "userId": 7,
     "date": "20/01/2025",
     "rating": 6,
-    "message": "Good service. The chatbot helped me understand the new policy changes."
+    "feedback": "Good service. The chatbot helped me understand the new policy changes."
   },
   {
     "id": 119,
     "userId": 1,
     "date": "21/01/2025",
     "rating": -8,
-    "message": "Very frustrating. The chatbot kept providing irrelevant information to my questions."
+    "feedback": "Very frustrating. The chatbot kept providing irrelevant information to my questions."
   },
   {
     "id": 120,
     "userId": 2,
     "date": "22/01/2025",
     "rating": 2,
-    "message": "The chatbot provided minimal help with my technical issue."
+    "feedback": "The chatbot provided minimal help with my technical issue."
   },
   {
     "id": 121,
     "userId": 3,
     "date": "23/01/2025",
     "rating": 9,
-    "message": "Excellent support! The chatbot guided me through the entire setup process perfectly."
+    "feedback": "Excellent support! The chatbot guided me through the entire setup process perfectly."
   },
   {
     "id": 122,
     "userId": 4,
     "date": "24/01/2025",
     "rating": -2,
-    "message": "The chatbot was slightly unhelpful and slow to respond."
+    "feedback": "The chatbot was slightly unhelpful and slow to respond."
   },
   {
     "id": 123,
     "userId": 5,
     "date": "25/01/2025",
     "rating": 5,
-    "message": "Decent experience. The chatbot provided satisfactory answers to my questions."
+    "feedback": "Decent experience. The chatbot provided satisfactory answers to my questions."
   },
   {
     "id": 124,
     "userId": 6,
     "date": "26/01/2025",
     "rating": -7,
-    "message": "Very poor service. The chatbot completely misunderstood my needs."
+    "feedback": "Very poor service. The chatbot completely misunderstood my needs."
   },
   {
     "id": 125,
     "userId": 7,
     "date": "27/01/2025",
     "rating": 4,
-    "message": "The chatbot was somewhat helpful with my account inquiry."
+    "feedback": "The chatbot was somewhat helpful with my account inquiry."
   },
   {
     "id": 126,
     "userId": 1,
     "date": "28/01/2025",
     "rating": 10,
-    "message": "Outstanding service! The chatbot solved my complex issue immediately."
+    "feedback": "Outstanding service! The chatbot solved my complex issue immediately."
   },
   {
     "id": 127,
     "userId": 2,
     "date": "29/01/2025",
     "rating": -5,
-    "message": "Not helpful. The chatbot couldn't assist with my specific requirements."
+    "feedback": "Not helpful. The chatbot couldn't assist with my specific requirements."
   },
   {
     "id": 128,
     "userId": 3,
     "date": "30/01/2025",
     "rating": 1,
-    "message": "The chatbot barely managed to answer my simplest question."
+    "feedback": "The chatbot barely managed to answer my simplest question."
   },
   {
     "id": 129,
     "userId": 4,
     "date": "31/01/2025",
     "rating": 7,
-    "message": "Very good experience. The chatbot provided all the information I needed about the product."
+    "feedback": "Very good experience. The chatbot provided all the information I needed about the product."
   },
   {
     "id": 130,
     "userId": 5,
     "date": "14/02/2025",
     "rating": -3,
-    "message": "The chatbot was somewhat unhelpful with my shipping inquiry."
+    "feedback": "The chatbot was somewhat unhelpful with my shipping inquiry."
   },
   {
     "id": 131,
     "userId": 6,
     "date": "01/03/2025",
     "rating": 6,
-    "message": "Good service. The chatbot effectively helped me with my return request."
+    "feedback": "Good service. The chatbot effectively helped me with my return request."
   },
   {
     "id": 132,
     "userId": 7,
     "date": "15/03/2025",
     "rating": -9,
-    "message": "Terrible experience. The chatbot gave me completely incorrect information about billing."
+    "feedback": "Terrible experience. The chatbot gave me completely incorrect information about billing."
   },
   {
     "id": 133,
     "userId": 1,
     "date": "01/04/2025",
     "rating": 3,
-    "message": "The chatbot was moderately helpful but took too long to understand my issue."
+    "feedback": "The chatbot was moderately helpful but took too long to understand my issue."
   },
   {
     "id": 134,
     "userId": 2,
     "date": "07/04/2025",
     "rating": 8,
-    "message": "Great support! The chatbot quickly resolved my account access problem."
+    "feedback": "Great support! The chatbot quickly resolved my account access problem."
   },
   {
     "id": 135,
     "userId": 3,
     "date": "13/04/2025",
     "rating": -1,
-    "message": "The chatbot's responses were slightly unhelpful and too automated."
+    "feedback": "The chatbot's responses were slightly unhelpful and too automated."
   },
   {
     "id": 136,
     "userId": 4,
     "date": "19/04/2025",
     "rating": 5,
-    "message": "Satisfactory service. The chatbot answered most of my questions about the product."
+    "feedback": "Satisfactory service. The chatbot answered most of my questions about the product."
   },
   {
     "id": 137,
     "userId": 5,
     "date": "05/02/2025",
     "rating": -6,
-    "message": "Disappointing. The chatbot couldn't help me with my specific technical issue."
+    "feedback": "Disappointing. The chatbot couldn't help me with my specific technical issue."
   },
   {
     "id": 138,
     "userId": 6,
     "date": "10/02/2025",
     "rating": 2,
-    "message": "The chatbot provided only basic information that wasn't very helpful."
+    "feedback": "The chatbot provided only basic information that wasn't very helpful."
   },
   {
     "id": 139,
     "userId": 7,
     "date": "15/02/2025",
     "rating": 9,
-    "message": "Excellent experience! The chatbot resolved my complex issue quickly and efficiently."
+    "feedback": "Excellent experience! The chatbot resolved my complex issue quickly and efficiently."
   },
   {
     "id": 140,
     "userId": 1,
     "date": "20/02/2025",
     "rating": -4,
-    "message": "The chatbot had difficulty understanding my simple questions about my order."
+    "feedback": "The chatbot had difficulty understanding my simple questions about my order."
   },
   {
     "id": 141,
     "userId": 2,
     "date": "25/02/2025",
     "rating": 0,
-    "message": "Neutral experience. The chatbot provided standard responses that weren't particularly helpful."
+    "feedback": "Neutral experience. The chatbot provided standard responses that weren't particularly helpful."
   },
   {
     "id": 142,
     "userId": 3,
     "date": "02/03/2025",
     "rating": 7,
-    "message": "Very good service. The chatbot guided me through the troubleshooting process effectively."
+    "feedback": "Very good service. The chatbot guided me through the troubleshooting process effectively."
   },
   {
     "id": 143,
     "userId": 4,
     "date": "07/03/2025",
     "rating": -8,
-    "message": "Very frustrating. The chatbot kept misunderstanding my payment questions."
+    "feedback": "Very frustrating. The chatbot kept misunderstanding my payment questions."
   },
   {
     "id": 144,
     "userId": 5,
     "date": "12/03/2025",
     "rating": 4,
-    "message": "The chatbot was somewhat helpful but required multiple explanations."
+    "feedback": "The chatbot was somewhat helpful but required multiple explanations."
   },
   {
     "id": 145,
     "userId": 6,
     "date": "17/03/2025",
     "rating": 10,
-    "message": "Outstanding support! The chatbot perfectly understood my complex issue and resolved it instantly."
+    "feedback": "Outstanding support! The chatbot perfectly understood my complex issue and resolved it instantly."
   },
   {
     "id": 146,
     "userId": 7,
     "date": "22/03/2025",
     "rating": -2,
-    "message": "The chatbot was slightly unhelpful and provided generic information."
+    "feedback": "The chatbot was slightly unhelpful and provided generic information."
   },
   {
     "id": 147,
     "userId": 1,
     "date": "27/03/2025",
     "rating": 6,
-    "message": "Good experience. The chatbot was polite and provided useful information."
+    "feedback": "Good experience. The chatbot was polite and provided useful information."
   },
   {
     "id": 148,
     "userId": 2,
     "date": "01/04/2025",
     "rating": -10,
-    "message": "Completely useless. The chatbot couldn't understand or help with any of my questions."
+    "feedback": "Completely useless. The chatbot couldn't understand or help with any of my questions."
   },
   {
     "id": 149,
     "userId": 3,
     "date": "06/04/2025",
     "rating": 1,
-    "message": "The chatbot barely helped with my basic inquiry about account settings."
+    "feedback": "The chatbot barely helped with my basic inquiry about account settings."
   },
   {
     "id": 150,
     "userId": 4,
     "date": "11/04/2025",
     "rating": 8,
-    "message": "Great service! The chatbot quickly solved my issue with the website navigation."
+    "feedback": "Great service! The chatbot quickly solved my issue with the website navigation."
   },
   {
     "id": 151,
     "userId": 5,
     "date": "16/04/2025",
     "rating": -5,
-    "message": "Not helpful. The chatbot couldn't understand my specific request about product features."
+    "feedback": "Not helpful. The chatbot couldn't understand my specific request about product features."
   },
   {
     "id": 152,
     "userId": 6,
     "date": "04/01/2025",
     "rating": 3,
-    "message": "The chatbot was moderately helpful but struggled with detailed questions."
+    "feedback": "The chatbot was moderately helpful but struggled with detailed questions."
   },
   {
     "id": 153,
     "userId": 7,
     "date": "09/01/2025",
     "rating": 9,
-    "message": "Excellent support! The chatbot provided detailed information about my subscription options."
+    "feedback": "Excellent support! The chatbot provided detailed information about my subscription options."
   },
   {
     "id": 154,
     "userId": 1,
     "date": "14/01/2025",
     "rating": -3,
-    "message": "The chatbot had some trouble understanding my shipping questions."
+    "feedback": "The chatbot had some trouble understanding my shipping questions."
   },
   {
     "id": 155,
     "userId": 2,
     "date": "19/01/2025",
     "rating": 5,
-    "message": "Decent experience. The chatbot provided adequate help with my account settings."
+    "feedback": "Decent experience. The chatbot provided adequate help with my account settings."
   },
   {
     "id": 156,
     "userId": 3,
     "date": "24/01/2025",
     "rating": -7,
-    "message": "Very unhelpful. The chatbot couldn't assist with my basic questions about returns."
+    "feedback": "Very unhelpful. The chatbot couldn't assist with my basic questions about returns."
   },
   {
     "id": 157,
     "userId": 4,
     "date": "29/01/2025",
     "rating": 2,
-    "message": "The chatbot provided minimal assistance with my technical questions."
+    "feedback": "The chatbot provided minimal assistance with my technical questions."
   },
   {
     "id": 158,
     "userId": 5,
     "date": "03/02/2025",
     "rating": 7,
-    "message": "Very good experience. The chatbot was knowledgeable about the product details."
+    "feedback": "Very good experience. The chatbot was knowledgeable about the product details."
   },
   {
     "id": 159,
     "userId": 6,
     "date": "08/02/2025",
     "rating": -9,
-    "message": "Terrible service. The chatbot completely misunderstood my simple questions about billing."
+    "feedback": "Terrible service. The chatbot completely misunderstood my simple questions about billing."
   },
   {
     "id": 160,
     "userId": 7,
     "date": "13/02/2025",
     "rating": 4,
-    "message": "The chatbot was somewhat helpful with my account questions."
+    "feedback": "The chatbot was somewhat helpful with my account questions."
   },
   {
     "id": 161,
     "userId": 1,
     "date": "18/02/2025",
     "rating": 10,
-    "message": "Outstanding support! The chatbot resolved my complex issue immediately and thoroughly."
+    "feedback": "Outstanding support! The chatbot resolved my complex issue immediately and thoroughly."
   },
   {
     "id": 162,
     "userId": 2,
     "date": "23/02/2025",
     "rating": -1,
-    "message": "The chatbot's responses were slightly unhelpful and too generic for my needs."
+    "feedback": "The chatbot's responses were slightly unhelpful and too generic for my needs."
   },
   {
     "id": 163,
     "userId": 3,
     "date": "28/02/2025",
     "rating": 6,
-    "message": "Good experience. The chatbot provided helpful information about my order status."
+    "feedback": "Good experience. The chatbot provided helpful information about my order status."
   },
   {
     "id": 164,
     "userId": 4,
     "date": "05/03/2025",
     "rating": -6,
-    "message": "Disappointing. The chatbot couldn't help me reset my password properly."
+    "feedback": "Disappointing. The chatbot couldn't help me reset my password properly."
   },
   {
     "id": 165,
     "userId": 5,
     "date": "10/03/2025",
     "rating": 1,
-    "message": "The chatbot barely helped with my basic inquiry about shipping times."
+    "feedback": "The chatbot barely helped with my basic inquiry about shipping times."
   },
   {
     "id": 166,
     "userId": 6,
     "date": "15/03/2025",
     "rating": 8,
-    "message": "Great service! The chatbot effectively guided me through the troubleshooting process."
+    "feedback": "Great service! The chatbot effectively guided me through the troubleshooting process."
   },
   {
     "id": 167,
     "userId": 7,
     "date": "20/03/2025",
     "rating": -4,
-    "message": "The chatbot had difficulty understanding my straightforward questions about product features."
+    "feedback": "The chatbot had difficulty understanding my straightforward questions about product features."
   },
   {
     "id": 168,
     "userId": 1,
     "date": "25/03/2025",
     "rating": 0,
-    "message": "Neutral experience. The chatbot wasn't particularly helpful or unhelpful."
+    "feedback": "Neutral experience. The chatbot wasn't particularly helpful or unhelpful."
   },
   {
     "id": 169,
     "userId": 2,
     "date": "30/03/2025",
     "rating": 9,
-    "message": "Excellent support! The chatbot quickly solved my issue with the payment process."
+    "feedback": "Excellent support! The chatbot quickly solved my issue with the payment process."
   },
   {
     "id": 170,
     "userId": 3,
     "date": "04/04/2025",
     "rating": -8,
-    "message": "Very frustrating. The chatbot kept misinterpreting my simple questions about delivery."
+    "feedback": "Very frustrating. The chatbot kept misinterpreting my simple questions about delivery."
   },
   {
     "id": 171,
     "userId": 4,
     "date": "09/04/2025",
     "rating": 3,
-    "message": "The chatbot was moderately helpful but slow to respond to my inquiry."
+    "feedback": "The chatbot was moderately helpful but slow to respond to my inquiry."
   },
   {
     "id": 172,
     "userId": 5,
     "date": "14/04/2025",
     "rating": 7,
-    "message": "Very good service. The chatbot provided detailed information about the new features."
+    "feedback": "Very good service. The chatbot provided detailed information about the new features."
   },
   {
     "id": 173,
     "userId": 6,
     "date": "19/04/2025",
     "rating": -2,
-    "message": "The chatbot was slightly unhelpful with my subscription questions."
+    "feedback": "The chatbot was slightly unhelpful with my subscription questions."
   },
   {
     "id": 174,
     "userId": 7,
     "date": "02/01/2025",
     "rating": 5,
-    "message": "Satisfactory experience. The chatbot answered most of my questions about the product."
+    "feedback": "Satisfactory experience. The chatbot answered most of my questions about the product."
   },
   {
     "id": 175,
     "userId": 1,
     "date": "07/01/2025",
     "rating": -10,
-    "message": "Completely useless. The chatbot provided entirely wrong information about my account."
+    "feedback": "Completely useless. The chatbot provided entirely wrong information about my account."
   },
   {
     "id": 176,
     "userId": 2,
     "date": "12/01/2025",
     "rating": 2,
-    "message": "The chatbot provided minimal help with my technical issue."
+    "feedback": "The chatbot provided minimal help with my technical issue."
   },
   {
     "id": 177,
     "userId": 3,
     "date": "17/01/2025",
     "rating": 8,
-    "message": "Great experience! The chatbot was knowledgeable and efficient in resolving my issue."
+    "feedback": "Great experience! The chatbot was knowledgeable and efficient in resolving my issue."
   },
   {
     "id": 178,
     "userId": 4,
     "date": "22/01/2025",
     "rating": -5,
-    "message": "Not helpful. The chatbot couldn't understand my specific requirements for the order."
+    "feedback": "Not helpful. The chatbot couldn't understand my specific requirements for the order."
   },
   {
     "id": 179,
     "userId": 5,
     "date": "27/01/2025",
     "rating": 4,
-    "message": "The chatbot was somewhat helpful with my account settings questions."
+    "feedback": "The chatbot was somewhat helpful with my account settings questions."
   },
   {
     "id": 180,
     "userId": 6,
     "date": "01/02/2025",
     "rating": 10,
-    "message": "Outstanding service! The chatbot perfectly understood and solved my complex issue."
+    "feedback": "Outstanding service! The chatbot perfectly understood and solved my complex issue."
   },
   {
     "id": 181,
     "userId": 7,
     "date": "06/02/2025",
     "rating": -3,
-    "message": "The chatbot had some trouble understanding my shipping questions."
+    "feedback": "The chatbot had some trouble understanding my shipping questions."
   },
   {
     "id": 182,
     "userId": 1,
     "date": "11/02/2025",
     "rating": 6,
-    "message": "Good experience. The chatbot provided helpful information about the product features."
+    "feedback": "Good experience. The chatbot provided helpful information about the product features."
   },
   {
     "id": 183,
     "userId": 2,
     "date": "16/02/2025",
     "rating": -7,
-    "message": "Very unhelpful. The chatbot couldn't assist with my basic questions about returns."
+    "feedback": "Very unhelpful. The chatbot couldn't assist with my basic questions about returns."
   },
   {
     "id": 184,
     "userId": 3,
     "date": "21/02/2025",
     "rating": 1,
-    "message": "The chatbot barely helped with my simple inquiry about account access."
+    "feedback": "The chatbot barely helped with my simple inquiry about account access."
   },
   {
     "id": 185,
     "userId": 4,
     "date": "26/02/2025",
     "rating": 9,
-    "message": "Excellent support! The chatbot quickly resolved my issue with the website login."
+    "feedback": "Excellent support! The chatbot quickly resolved my issue with the website login."
   },
   {
     "id": 186,
     "userId": 5,
     "date": "03/03/2025",
     "rating": -4,
-    "message": "The chatbot had difficulty understanding my straightforward questions about product features."
+    "feedback": "The chatbot had difficulty understanding my straightforward questions about product features."
   },
   {
     "id": 187,
     "userId": 6,
     "date": "08/03/2025",
     "rating": 3,
-    "message": "The chatbot was moderately helpful but required several clarifications."
+    "feedback": "The chatbot was moderately helpful but required several clarifications."
   },
   {
     "id": 188,
     "userId": 7,
     "date": "13/03/2025",
     "rating": 7,
-    "message": "Very good service. The chatbot guided me through the troubleshooting process effectively."
+    "feedback": "Very good service. The chatbot guided me through the troubleshooting process effectively."
   },
   {
     "id": 189,
     "userId": 1,
     "date": "18/03/2025",
     "rating": -9,
-    "message": "Terrible experience. The chatbot gave me completely wrong information about my order status."
+    "feedback": "Terrible experience. The chatbot gave me completely wrong information about my order status."
   },
   {
     "id": 190,
     "userId": 2,
     "date": "23/03/2025",
     "rating": 2,
-    "message": "The chatbot provided minimal assistance with my account questions."
+    "feedback": "The chatbot provided minimal assistance with my account questions."
   },
   {
     "id": 191,
     "userId": 3,
     "date": "28/03/2025",
     "rating": 8,
-    "message": "Great service! The chatbot effectively handled my billing inquiry."
+    "feedback": "Great service! The chatbot effectively handled my billing inquiry."
   },
   {
     "id": 192,
     "userId": 4,
     "date": "02/04/2025",
     "rating": -1,
-    "message": "The chatbot's responses were slightly unhelpful and too automated."
+    "feedback": "The chatbot's responses were slightly unhelpful and too automated."
   },
   {
     "id": 193,
     "userId": 5,
     "date": "07/04/2025",
     "rating": 5,
-    "message": "Satisfactory experience. The chatbot answered most of my questions adequately."
+    "feedback": "Satisfactory experience. The chatbot answered most of my questions adequately."
   },
   {
     "id": 194,
     "userId": 6,
     "date": "12/04/2025",
     "rating": -6,
-    "message": "Disappointing. The chatbot couldn't help me reset my password correctly."
+    "feedback": "Disappointing. The chatbot couldn't help me reset my password correctly."
   },
   {
     "id": 195,
     "userId": 7,
     "date": "17/04/2025",
     "rating": 0,
-    "message": "Neutral experience. The chatbot wasn't particularly helpful or unhelpful."
+    "feedback": "Neutral experience. The chatbot wasn't particularly helpful or unhelpful."
   },
   {
     "id": 196,
     "userId": 1,
     "date": "01/01/2025",
     "rating": 9,
-    "message": "Excellent support! The chatbot quickly solved my issue with the payment verification."
+    "feedback": "Excellent support! The chatbot quickly solved my issue with the payment verification."
   },
   {
     "id": 197,
     "userId": 2,
     "date": "05/01/2025",
     "rating": -8,
-    "message": "Very frustrating. The chatbot kept misinterpreting my simple questions about product compatibility."
+    "feedback": "Very frustrating. The chatbot kept misinterpreting my simple questions about product compatibility."
   },
   {
     "id": 198,
     "userId": 3,
     "date": "10/01/2025",
     "rating": 4,
-    "message": "The chatbot was somewhat helpful with my order tracking questions."
+    "feedback": "The chatbot was somewhat helpful with my order tracking questions."
   },
   {
     "id": 199,
     "userId": 4,
     "date": "15/01/2025",
     "rating": 6,
-    "message": "Good experience. The chatbot provided helpful information about the return policy."
+    "feedback": "Good experience. The chatbot provided helpful information about the return policy."
   },
   {
     "id": 200,
     "userId": 5,
     "date": "20/01/2025",
     "rating": -5,
-    "message": "Not helpful. The chatbot couldn't understand my specific request about subscription changes."
+    "feedback": "Not helpful. The chatbot couldn't understand my specific request about subscription changes."
   },
   {
     "id": 201,
     "userId": 6,
     "date": "25/01/2025",
     "rating": 3,
-    "message": "The chatbot was moderately helpful but took too long to understand my issue."
+    "feedback": "The chatbot was moderately helpful but took too long to understand my issue."
   },
   {
     "id": 202,
     "userId": 7,
     "date": "30/01/2025",
     "rating": 10,
-    "message": "Outstanding service! The chatbot perfectly understood and resolved my complex technical issue."
+    "feedback": "Outstanding service! The chatbot perfectly understood and resolved my complex technical issue."
   },
   {
     "id": 203,
     "userId": 1,
     "date": "05/02/2025",
     "rating": -3,
-    "message": "The chatbot had some trouble understanding my questions about product availability."
+    "feedback": "The chatbot had some trouble understanding my questions about product availability."
   },
   {
     "id": 204,
     "userId": 2,
     "date": "10/02/2025",
     "rating": 7,
-    "message": "Very good experience. The chatbot was knowledgeable and resolved my issue quickly."
+    "feedback": "Very good experience. The chatbot was knowledgeable and resolved my issue quickly."
   },
   {
     "id": 205,
     "userId": 3,
     "date": "15/02/2025",
     "rating": -2,
-    "message": "The chatbot was slightly unhelpful with my shipping inquiry."
+    "feedback": "The chatbot was slightly unhelpful with my shipping inquiry."
   },
   {
     "id": 206,
     "userId": 4,
     "date": "20/02/2025",
     "rating": 5,
-    "message": "Decent experience. The chatbot provided adequate help with my product questions."
+    "feedback": "Decent experience. The chatbot provided adequate help with my product questions."
   },
   {
     "id": 207,
     "userId": 5,
     "date": "25/02/2025",
     "rating": -10,
-    "message": "Completely useless. The chatbot couldn't understand even my simplest questions about order status."
+    "feedback": "Completely useless. The chatbot couldn't understand even my simplest questions about order status."
   },
   {
     "id": 208,
     "userId": 6,
     "date": "02/03/2025",
     "rating": 1,
-    "message": "The chatbot barely helped with my basic inquiry about account verification."
+    "feedback": "The chatbot barely helped with my basic inquiry about account verification."
   },
   {
     "id": 209,
     "userId": 7,
     "date": "07/03/2025",
     "rating": 8,
-    "message": "Great support! The chatbot efficiently guided me through the installation process."
+    "feedback": "Great support! The chatbot efficiently guided me through the installation process."
   },
   {
     "id": 210,
     "userId": 1,
     "date": "12/03/2025",
     "rating": -4,
-    "message": "The chatbot had difficulty understanding my straightforward questions about billing."
+    "feedback": "The chatbot had difficulty understanding my straightforward questions about billing."
   },
   {
     "id": 211,
     "userId": 2,
     "date": "17/03/2025",
     "rating": 2,
-    "message": "The chatbot provided minimal assistance with my technical issue."
+    "feedback": "The chatbot provided minimal assistance with my technical issue."
   },
   {
     "id": 212,
     "userId": 3,
     "date": "22/03/2025",
     "rating": 9,
-    "message": "Excellent service! The chatbot quickly resolved my issue with the account settings."
+    "feedback": "Excellent service! The chatbot quickly resolved my issue with the account settings."
   },
   {
     "id": 213,
     "userId": 4,
     "date": "27/03/2025",
     "rating": -7,
-    "message": "Very unhelpful. The chatbot couldn't assist with my basic questions about product features."
+    "feedback": "Very unhelpful. The chatbot couldn't assist with my basic questions about product features."
   },
   {
     "id": 214,
     "userId": 5,
     "date": "01/04/2025",
     "rating": 3,
-    "message": "The chatbot was moderately helpful but required multiple explanations of my issue."
+    "feedback": "The chatbot was moderately helpful but required multiple explanations of my issue."
   },
   {
     "id": 215,
     "userId": 6,
     "date": "06/04/2025",
     "rating": 6,
-    "message": "Good experience. The chatbot provided helpful information about my subscription status."
+    "feedback": "Good experience. The chatbot provided helpful information about my subscription status."
   },
   {
     "id": 216,
     "userId": 7,
     "date": "11/04/2025",
     "rating": -9,
-    "message": "Terrible service. The chatbot completely misunderstood my simple questions about shipping."
+    "feedback": "Terrible service. The chatbot completely misunderstood my simple questions about shipping."
   },
   {
     "id": 217,
     "userId": 1,
     "date": "16/04/2025",
     "rating": 0,
-    "message": "Neutral experience. The chatbot provided standard responses that weren't particularly helpful."
+    "feedback": "Neutral experience. The chatbot provided standard responses that weren't particularly helpful."
   },
   {
     "id": 218,
     "userId": 2,
     "date": "03/01/2025",
     "rating": 4,
-    "message": "The chatbot was somewhat helpful with my account access questions."
+    "feedback": "The chatbot was somewhat helpful with my account access questions."
   },
   {
     "id": 219,
     "userId": 3,
     "date": "08/01/2025",
     "rating": 10,
-    "message": "Outstanding support! The chatbot perfectly handled my complex issue with payment processing."
+    "feedback": "Outstanding support! The chatbot perfectly handled my complex issue with payment processing."
   },
   {
     "id": 220,
     "userId": 4,
     "date": "13/01/2025",
     "rating": -5,
-    "message": "Not helpful. The chatbot couldn't understand my specific requirements for the order."
+    "feedback": "Not helpful. The chatbot couldn't understand my specific requirements for the order."
   }
 ]

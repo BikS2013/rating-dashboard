@@ -4,10 +4,10 @@ export interface User {
   name: string;
 }
 
-// Message in a conversation
+// Feedback in a conversation
 export interface ConversationMessage {
   id: number;
-  userId: number | null; // null for chatbot messages
+  userId: number | null; // null for chatbot feedbacks
   content: string;
   timestamp: string;
 }
@@ -18,7 +18,7 @@ export interface Rating {
   userId: number;
   date: string; // Format: 'dd/mm/yyyy'
   rating: number; // Range: -10 to 10
-  message: string; // User feedback message
+  feedback: string; // User feedback
   conversation?: ConversationMessage[]; // Optional conversation history
 }
 
@@ -60,6 +60,6 @@ export interface FilterState {
 export interface DashboardState {
   selectedCategory: string | null;
   activeTab: 'details' | 'distribution';
-  expandedMessages: Record<number, boolean>;
+  expandedFeedbacks: Record<number, boolean>;
   expandedConversations: Record<number, boolean>;
 }

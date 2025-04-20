@@ -8,7 +8,7 @@ interface DetailedRatingsProps {
 }
 
 const DetailedRatings: React.FC<DetailedRatingsProps> = ({ ratings }) => {
-  const { dashboardState, toggleMessageExpansion, toggleConversationExpansion } = useDashboard();
+  const { dashboardState, toggleFeedbackExpansion, toggleConversationExpansion } = useDashboard();
   const ratingService = useRatingService();
   const [users, setUsers] = useState<Record<number, User>>({});
   
@@ -62,19 +62,19 @@ const DetailedRatings: React.FC<DetailedRatingsProps> = ({ ratings }) => {
               <div className="text-gray-500 mb-3">{rating.date}</div>
               
               <p className="mb-2 text-base">
-                {dashboardState.expandedMessages[rating.id]
-                  ? rating.message
-                  : `${rating.message.substring(0, 100)}${
-                      rating.message.length > 100 ? '...' : ''
+                {dashboardState.expandedFeedbacks[rating.id]
+                  ? rating.feedback
+                  : `${rating.feedback.substring(0, 100)}${
+                      rating.feedback.length > 100 ? '...' : ''
                     }`}
               </p>
               
-              {rating.message.length > 100 && (
+              {rating.feedback.length > 100 && (
                 <button
                   className="text-blue-500 hover:text-blue-700 transition-colors mb-3"
-                  onClick={() => toggleMessageExpansion(rating.id)}
+                  onClick={() => toggleFeedbackExpansion(rating.id)}
                 >
-                  {dashboardState.expandedMessages[rating.id] 
+                  {dashboardState.expandedFeedbacks[rating.id] 
                     ? 'Show less' 
                     : 'Show more'}
                 </button>
@@ -87,14 +87,14 @@ const DetailedRatings: React.FC<DetailedRatingsProps> = ({ ratings }) => {
                   <div className="border rounded-md p-4 bg-gray-50">
                     {rating.conversation.map(message => {
                       const isUser = message.userId !== null;
-                      const messageSender = isUser 
+                      const feedbackSender = isUser 
                         ? `User ${message.userId}` 
                         : 'Chatbot';
                       
                       return (
                         <div key={message.id} className="mb-3 last:mb-0">
                           <div className={`font-medium ${isUser ? 'text-blue-600' : 'text-gray-700'}`}>
-                            {messageSender}
+                            {feedbackSender}
                           </div>
                           <div className={`mt-1 ${isUser ? 'text-blue-600' : 'text-gray-700'}`}>
                             {message.content}

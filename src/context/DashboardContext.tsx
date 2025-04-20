@@ -5,14 +5,14 @@ interface DashboardContextType {
   dashboardState: DashboardState;
   setSelectedCategory: (category: string | null) => void;
   setActiveTab: (tab: 'details' | 'distribution') => void;
-  toggleMessageExpansion: (messageId: number) => void;
+  toggleFeedbackExpansion: (feedbackId: number) => void;
   toggleConversationExpansion: (ratingId: number) => void;
 }
 
 const defaultDashboardState: DashboardState = {
   selectedCategory: null,
   activeTab: 'details',
-  expandedMessages: {},
+  expandedFeedbacks: {},
   expandedConversations: {},
 };
 
@@ -35,12 +35,12 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({ children 
     });
   };
 
-  const toggleMessageExpansion = (messageId: number) => {
+  const toggleFeedbackExpansion = (feedbackId: number) => {
     setDashboardState({
       ...dashboardState,
-      expandedMessages: {
-        ...dashboardState.expandedMessages,
-        [messageId]: !dashboardState.expandedMessages[messageId],
+      expandedFeedbacks: {
+        ...dashboardState.expandedFeedbacks,
+        [feedbackId]: !dashboardState.expandedFeedbacks[feedbackId],
       },
     });
   };
@@ -61,7 +61,7 @@ export const DashboardProvider: React.FC<{ children: ReactNode }> = ({ children 
         dashboardState,
         setSelectedCategory,
         setActiveTab,
-        toggleMessageExpansion,
+        toggleFeedbackExpansion,
         toggleConversationExpansion,
       }}
     >

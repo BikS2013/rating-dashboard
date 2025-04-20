@@ -87,8 +87,8 @@ const generateRandomRating = (id: number): Rating => {
   // Format date as dd/mm/yyyy
   const formattedDate = `${String(date.getDate()).padStart(2, '0')}/${String(date.getMonth() + 1).padStart(2, '0')}/${date.getFullYear()}`;
   
-  // Generate random feedback message
-  const feedbackMessages = [
+  // Generate random feedback
+  const feedbacks = [
     'The chatbot was very helpful in answering my question about account settings.',
     'I had trouble getting the bot to understand what I was asking about billing information.',
     'Great experience! The chatbot quickly resolved my issue with password reset.',
@@ -105,7 +105,7 @@ const generateRandomRating = (id: number): Rating => {
     'The response was accurate but took too many steps to get to the information I needed.',
   ];
   
-  const message = feedbackMessages[Math.floor(Math.random() * feedbackMessages.length)];
+  const feedback = feedbacks[Math.floor(Math.random() * feedbacks.length)];
   
   // Add conversation history for some ratings (about 30% of them)
   const hasConversation = Math.random() < 0.3;
@@ -116,7 +116,7 @@ const generateRandomRating = (id: number): Rating => {
     userId,
     date: formattedDate,
     rating,
-    message,
+    feedback,
     conversation,
   };
 };
