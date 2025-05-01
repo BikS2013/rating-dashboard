@@ -10,7 +10,9 @@ services:
       - "8080:80"
     environment:
       - NODE_ENV=production
-    # If you need to mount environment files
-    # volumes:
-    #   - ./.env.production:/usr/share/nginx/html/.env
+    env_file:
+      - .env.production
+    # Mount environment files
+    volumes:
+      - ./.env.production:/usr/share/nginx/html/.env
     restart: unless-stopped

@@ -7,6 +7,9 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
+# Copy .env files
+COPY .env* ./
+
 # Install dependencies
 RUN npm install
 
@@ -25,8 +28,12 @@ COPY --from=build /app/dist /usr/share/nginx/html
 # Copy nginx config
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
+# Copy environment script
+COPY env.sh /env.sh
+RUN chmod +x /env.sh
+
 # Expose port
 EXPOSE 80
 
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Start nginx with env script
+CMD ["/env.sh"]
