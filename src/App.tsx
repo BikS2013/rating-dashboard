@@ -3,6 +3,7 @@ import Layout from './components/layout/Layout';
 import { FilterProvider } from './context/FilterContext';
 import { DashboardProvider } from './context/DashboardContext';
 import { RatingServiceProvider } from './context/RatingServiceContext';
+import { ThemeProvider } from './context/ThemeContext';
 import { RatingServiceFactory, ConnectorType } from './api/RatingServiceFactory';
 
 const App: React.FC = () => {
@@ -13,10 +14,10 @@ const App: React.FC = () => {
     VITE_AUTH_TOKEN: import.meta.env.VITE_AUTH_TOKEN ? '[REDACTED]' : undefined,
     isProd: import.meta.env.PROD
   });
-  
+
   // Determine connector type based on environment variables
   let connectorType = ConnectorType.MOCK;
-  
+
   if (import.meta.env.VITE_JSON_URL) {
     connectorType = ConnectorType.JSON;
     console.log('Using JSON connector with URL:', import.meta.env.VITE_JSON_URL);
@@ -26,7 +27,7 @@ const App: React.FC = () => {
   } else {
     console.log('Using MOCK connector (default)');
   }
-  
+
   // Initialize the rating service connector
   const connector = RatingServiceFactory.createConnector(
     connectorType,
@@ -36,17 +37,19 @@ const App: React.FC = () => {
       jsonUrl: import.meta.env.VITE_JSON_URL
     }
   );
-  
+
   console.log('Connector type:', connector.getBaseUrl());
-  
+
   return (
-    <RatingServiceProvider connector={connector}>
-      <FilterProvider>
-        <DashboardProvider>
-          <Layout />
-        </DashboardProvider>
-      </FilterProvider>
-    </RatingServiceProvider>
+    <ThemeProvider>
+      <RatingServiceProvider connector={connector}>
+        <FilterProvider>
+          <DashboardProvider>
+            <Layout />
+          </DashboardProvider>
+        </FilterProvider>
+      </RatingServiceProvider>
+    </ThemeProvider>
   );
 };
 

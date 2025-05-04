@@ -7,8 +7,10 @@ import DetailedView from './DetailedView';
 import { useFilter } from '../../context/FilterContext';
 import { useDashboard } from '../../context/DashboardContext';
 import { useRatingService } from '../../context/RatingServiceContext';
+import { useTheme } from '../../context/ThemeContext';
 import { Rating } from '../../models/types';
 import { getCategoryRatings } from '../../utils/filterUtils';
+import { BarChart3, RefreshCw } from 'lucide-react';
 
 interface DashboardProps {
   sidebarCollapsed: boolean;
@@ -16,25 +18,26 @@ interface DashboardProps {
 }
 
 const Dashboard: React.FC<DashboardProps> = ({ sidebarCollapsed, sidebarWidth }) => {
+  const { theme } = useTheme();
   const { filters } = useFilter();
   const { dashboardState } = useDashboard();
   const ratingService = useRatingService();
-  
+
   // State for loading indicators and ratings data
   const [isLoading, setIsLoading] = useState(false);
   const [ratingsData, setRatingsData] = useState<Rating[]>([]);
   const [refreshing, setRefreshing] = useState(false);
-  
+
   // Load ratings when filters change
   useEffect(() => {
     const loadData = async () => {
       try {
         console.log('Loading data with filters:', JSON.stringify(filters));
         setIsLoading(true);
-        
+
         // Don't clear previous data immediately - keep showing it while loading
         const ratings = await ratingService.getRatings(filters);
-        
+
         // Only update if we received data
         if (ratings && ratings.length > 0) {
           console.log(`Loaded ${ratings.length} ratings successfully`);
@@ -48,31 +51,31 @@ const Dashboard: React.FC<DashboardProps> = ({ sidebarCollapsed, sidebarWidth })
         setIsLoading(false);
       }
     };
-    
+
     loadData();
   }, [filters, ratingService]);
-  
+
   // Handle refresh button click
   const handleRefresh = async () => {
     try {
       setRefreshing(true);
-      
+
       console.log('Refreshing data from connector:', ratingService.getBaseUrl());
-      
+
       // Force refresh the connector data if the method exists
       if (ratingService.forceRefresh) {
         await ratingService.forceRefresh();
         console.log('Forced connector refresh completed');
       }
-      
+
       // Reload the users first
       const users = await ratingService.getUsers();
       console.log(`Reloaded ${users.length} users`);
-      
+
       // Then reload the ratings data
       const ratings = await ratingService.getRatings(filters);
       console.log(`Reloaded ${ratings.length} ratings`);
-      
+
       // Update state with new data
       if (ratings && ratings.length > 0) {
         setRatingsData(ratings);
@@ -80,10 +83,10 @@ const Dashboard: React.FC<DashboardProps> = ({ sidebarCollapsed, sidebarWidth })
       } else {
         console.warn('Received empty ratings array on refresh');
       }
-      
+
       // Log connector info
       console.log('Using connector:', ratingService.getBaseUrl());
-      
+
       // REMOVED: Don't force a page reload as it clears the state
       // This was likely causing the chart to disappear
     } catch (error) {
@@ -92,14 +95,14 @@ const Dashboard: React.FC<DashboardProps> = ({ sidebarCollapsed, sidebarWidth })
       setRefreshing(false);
     }
   };
-  
+
   // Get ratings for the selected category (if any)
   const categoryRatings = getCategoryRatings(ratingsData, dashboardState.selectedCategory);
-  
+
   return (
-    <div 
-      className="flex-1 overflow-y-auto"
-      style={{ 
+    <div
+      className={`flex-1 overflow-y-auto ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-50'}`}
+      style={{
         position: 'absolute',
         left: `${sidebarCollapsed ? 48 : sidebarWidth}px`,
         right: 0,
@@ -108,16 +111,16 @@ const Dashboard: React.FC<DashboardProps> = ({ sidebarCollapsed, sidebarWidth })
         transition: 'left 0.3s ease-in-out'
       }}
     >
-      <div className="p-2 h-full">
+      <div className="p-6 h-full">
         {/* Header with Refresh Button */}
-        <div className="flex justify-between items-center mb-2">
-          <h1 className="text-xl font-bold">Ratings Dashboard</h1>
+        <div className="flex justify-between items-center mb-6">
+          <h1 className={`text-2xl font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Ratings Dashboard</h1>
           <div className="flex items-center">
-            <span className="text-xs text-gray-500 mr-2">
+            <span className={`text-xs ${theme === 'dark' ? 'text-gray-300' : 'text-gray-500'} mr-2`}>
               {ratingService.getBaseUrl()}
             </span>
-            <button 
-              className={`px-3 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600 flex items-center ${refreshing ? 'opacity-75 cursor-wait' : ''}`}
+            <button
+              className={`px-3 py-1 text-sm ${theme === 'dark' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-blue-500 hover:bg-blue-600'} text-white rounded flex items-center ${refreshing ? 'opacity-75 cursor-wait' : ''}`}
               onClick={handleRefresh}
               disabled={refreshing || isLoading}
             >
@@ -131,16 +134,14 @@ const Dashboard: React.FC<DashboardProps> = ({ sidebarCollapsed, sidebarWidth })
                 </>
               ) : (
                 <>
-                  <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
-                  </svg>
+                  <RefreshCw size={16} className="mr-1" />
                   Refresh Data
                 </>
               )}
             </button>
           </div>
         </div>
-        
+
         {/* Loading indicator */}
         {isLoading && (
           <div className="flex justify-center items-center p-4">
@@ -151,23 +152,26 @@ const Dashboard: React.FC<DashboardProps> = ({ sidebarCollapsed, sidebarWidth })
             <span className="ml-2 text-blue-500">Loading data...</span>
           </div>
         )}
-        
+
         {/* Filter Summary Bar */}
         <FilterSummary />
-        
+
         {/* Rating Bar Chart */}
-        <div className="mt-3 bg-white p-4 rounded-lg shadow">
-          <h2 className="text-lg font-semibold mb-2">Rating Distribution Over Time</h2>
+        <div className={`mt-3 ${theme === 'dark' ? 'bg-gray-700' : 'bg-white'} p-4 rounded-lg shadow`}>
+          <h2 className={`text-lg font-semibold mb-2 flex items-center ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+            <BarChart3 size={20} className="text-blue-500 mr-2" />
+            Rating Distribution Over Time
+          </h2>
           {/* Use the simplified chart to ensure stability */}
           <SimpleBarChart ratings={ratingsData} />
         </div>
-        
+
         {/* Rating Summary Area */}
         <RatingSummary filteredRatings={ratingsData} />
-        
+
         {/* Detailed View (shows only when a category is selected) */}
         {dashboardState.selectedCategory && (
-          <div className="mt-3 mb-4 bg-white p-4 rounded-lg shadow">
+          <div className={`mt-3 mb-4 ${theme === 'dark' ? 'bg-gray-700' : 'bg-white'} p-4 rounded-lg shadow`}>
             <DetailedView categoryRatings={categoryRatings} />
           </div>
         )}

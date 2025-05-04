@@ -103,6 +103,25 @@ The dashboard works with the following data models:
 - Detailed view of individual ratings
 - User distribution chart
 
+## Alternative Chart Implementation
+
+This project includes backup implementations of the chart components using Recharts instead of Chart.js. To use Recharts:
+
+1. Install Recharts:
+```bash
+npm install recharts
+```
+
+2. Use the Recharts implementations that are saved as backup files:
+```
+src/components/dashboard/SimpleBarChart.recharts.tsx
+src/components/dashboard/RatingBarChart.recharts.tsx
+src/components/dashboard/UserDistribution.recharts.tsx
+src/utils/chartUtilsRecharts.ts
+```
+
+3. Update the imports in the components to use Recharts instead of Chart.js.
+
 ## License
 
 MIT
