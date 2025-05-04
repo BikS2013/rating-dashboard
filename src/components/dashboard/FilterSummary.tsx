@@ -4,7 +4,8 @@ import { User } from '../../models/types';
 import { timePeriodOptions, ratingCategories } from '../../utils/constants';
 import { useRatingService } from '../../context/RatingServiceContext';
 import { useTheme } from '../../context/ThemeContext';
-import { Users, Calendar, Tag } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUsers, faCalendarDays, faTag } from '@fortawesome/free-solid-svg-icons';
 
 const FilterSummary: React.FC = () => {
   const { theme } = useTheme();
@@ -45,12 +46,10 @@ const FilterSummary: React.FC = () => {
       }).filter(Boolean);
 
   return (
-    <div className={`${theme === 'dark' ? 'bg-gray-700 border-gray-600' : 'bg-gray-100 border-gray-200'} py-3 px-4 rounded-lg shadow-sm mb-4`}>
-      <h2 className={`text-lg font-semibold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Active Filters</h2>
-
-      <div className="flex flex-wrap gap-4 text-sm">
+    <div className={`${theme === 'dark' ? 'bg-gray-700 border-gray-600' : 'bg-gray-100 border-gray-200'} py-1 px-3 rounded shadow-sm`}>
+      <div className="flex flex-wrap gap-3 text-xs">
         <div className={`flex items-center ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-          <Users size={16} className="mr-1 text-blue-500" />
+          <FontAwesomeIcon icon={faUsers} className="mr-1 text-blue-500" size="xs" />
           <span className="font-medium mr-1">Users:</span>
           {selectedUserNames.length > 0
             ? selectedUserNames.length > 3
@@ -60,7 +59,7 @@ const FilterSummary: React.FC = () => {
         </div>
 
         <div className={`flex items-center ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-          <Calendar size={16} className="mr-1 text-green-500" />
+          <FontAwesomeIcon icon={faCalendarDays} className="mr-1 text-green-500" size="xs" />
           <span className="font-medium mr-1">Period:</span>
           {selectedTimePeriod === 'Custom'
             ? `${filters.fromDate} to ${filters.toDate}`
@@ -68,7 +67,7 @@ const FilterSummary: React.FC = () => {
         </div>
 
         <div className={`flex items-center ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-          <Tag size={16} className="mr-1 text-purple-500" />
+          <FontAwesomeIcon icon={faTag} className="mr-1 text-purple-500" size="xs" />
           <span className="font-medium mr-1">Categories:</span>
           {selectedCategories.length > 0
             ? selectedCategories.length > 2

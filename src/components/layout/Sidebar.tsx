@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Users, Clock, ChevronDown, Filter } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight, faUsers, faClock, faChevronDown, faFilter, faStar } from '@fortawesome/free-solid-svg-icons';
 import { useFilter } from '../../context/FilterContext';
 import { User } from '../../models/types';
 import { timePeriodOptions, ratingCategories } from '../../utils/constants';
@@ -65,11 +66,11 @@ const Sidebar: React.FC<SidebarProps> = ({
       className={`${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-800'} text-white h-full relative flex flex-col`}
       style={{
         width: `${sidebarWidth}px`,
-        position: 'absolute',
+        position: 'fixed',
         left: 0,
-        top: 0,
+        top: '40px', // 40px = h-10 (height of the top nav)
         bottom: 0,
-        zIndex: 10,
+        zIndex: 20,
         transition: 'width 0.3s ease-in-out'
       }}
     >
@@ -77,7 +78,7 @@ const Sidebar: React.FC<SidebarProps> = ({
       <div className={`flex justify-between items-center p-4 border-b ${theme === 'dark' ? 'border-gray-700' : 'border-gray-600'}`}>
         {!collapsed && (
           <div className="flex items-center">
-            <Filter size={18} className="mr-2" />
+            <FontAwesomeIcon icon={faFilter} className="mr-2" />
             <h1 className="text-xl font-bold">Filters</h1>
           </div>
         )}
@@ -86,7 +87,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           onClick={toggleSidebar}
           aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
         >
-          {collapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
+          <FontAwesomeIcon icon={collapsed ? faChevronRight : faChevronLeft} />
         </button>
       </div>
 
@@ -100,13 +101,40 @@ const Sidebar: React.FC<SidebarProps> = ({
         />
       )}
 
+      {/* Collapsed Icons - Only show when sidebar is collapsed */}
+      {collapsed && (
+        <div className="flex flex-col items-center pt-4 space-y-6">
+          <div
+            className="cursor-pointer hover:text-blue-400 transition-colors duration-200"
+            title="Users"
+            onClick={toggleSidebar}
+          >
+            <FontAwesomeIcon icon={faUsers} size="lg" />
+          </div>
+          <div
+            className="cursor-pointer hover:text-green-400 transition-colors duration-200"
+            title="Time Period"
+            onClick={toggleSidebar}
+          >
+            <FontAwesomeIcon icon={faClock} size="lg" />
+          </div>
+          <div
+            className="cursor-pointer hover:text-yellow-300 transition-colors duration-200"
+            title="Rating Categories"
+            onClick={toggleSidebar}
+          >
+            <FontAwesomeIcon icon={faStar} size="lg" className="text-yellow-400" />
+          </div>
+        </div>
+      )}
+
       {/* Sidebar Content - Only show when not collapsed */}
       {!collapsed && (
         <div className="p-4 flex-1 overflow-y-auto">
           {/* User Selection Section */}
           <div className="mb-6">
             <div className={`flex items-center mb-2 ${theme === 'dark' ? 'text-white' : 'text-white'}`}>
-              <Users size={18} className="mr-2" />
+              <FontAwesomeIcon icon={faUsers} className="mr-2" />
               <h2 className="font-medium">Users</h2>
             </div>
 
@@ -191,8 +219,8 @@ const Sidebar: React.FC<SidebarProps> = ({
                       </option>
                     ))}
                   </select>
-                  <ChevronDown
-                    size={18}
+                  <FontAwesomeIcon
+                    icon={faChevronDown}
                     className="absolute right-2 top-3 pointer-events-none"
                   />
                 </div>
@@ -203,7 +231,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           {/* Time Period Section */}
           <div className="mb-6">
             <div className="flex items-center mb-2">
-              <Clock size={18} className="mr-2" />
+              <FontAwesomeIcon icon={faClock} className="mr-2" />
               <h2 className="font-medium">Time Period</h2>
             </div>
 
@@ -219,8 +247,8 @@ const Sidebar: React.FC<SidebarProps> = ({
                   </option>
                 ))}
               </select>
-              <ChevronDown
-                size={18}
+              <FontAwesomeIcon
+                icon={faChevronDown}
                 className="absolute right-2 top-3 pointer-events-none"
               />
             </div>
@@ -244,7 +272,10 @@ const Sidebar: React.FC<SidebarProps> = ({
 
           {/* Rating Categories Section */}
           <div>
-            <h2 className="font-medium mb-2">Rating Categories</h2>
+            <div className="flex items-center mb-2">
+              <FontAwesomeIcon icon={faStar} className="mr-2 text-yellow-400" />
+              <h2 className="font-medium">Rating Categories</h2>
+            </div>
             <div className={`space-y-1 ${theme === 'dark' ? 'bg-gray-700' : 'bg-gray-700'} rounded p-2`}>
               {ratingCategories.map(category => (
                 <div key={category.id} className="flex items-center">

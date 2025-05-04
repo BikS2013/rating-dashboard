@@ -17,7 +17,7 @@ A React-based dashboard for visualizing and analyzing user ratings for a chatbot
 - TypeScript
 - Tailwind CSS for styling
 - Chart.js with react-chartjs-2 for visualizations
-- Lucide React for icons
+- Font Awesome for icons
 - Vite for build tooling
 
 ## Project Structure

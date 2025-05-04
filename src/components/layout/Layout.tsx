@@ -2,7 +2,8 @@ import React, { useState, useCallback } from 'react';
 import Sidebar from './Sidebar';
 import Dashboard from '../dashboard/Dashboard';
 import { useTheme } from '../../context/ThemeContext';
-import { Sun, Moon } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 const Layout: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
@@ -21,24 +22,24 @@ const Layout: React.FC = () => {
 
   return (
     <div className={`flex flex-col h-screen overflow-hidden relative ${theme === 'dark' ? 'bg-gray-900' : 'bg-gray-100'}`}>
-      {/* Top Navigation Bar */}
-      <nav className={`${theme === 'dark' ? 'bg-gray-800' : 'bg-indigo-900'} text-white flex items-center justify-between h-12`}>
+      {/* Top Navigation Bar - Fixed (A1) */}
+      <nav className={`${theme === 'dark' ? 'bg-gray-800' : 'bg-indigo-900'} text-white flex items-center justify-between h-10 fixed top-0 left-0 right-0 z-30`}>
         <div className="flex items-center">
-          <div className="px-6 py-3 font-semibold">
+          <div className="px-4 py-2 font-semibold text-sm">
             Ratings Dashboard
           </div>
         </div>
         <button
           onClick={toggleTheme}
-          className={`px-4 py-3 ${theme === 'dark' ? 'hover:bg-gray-700' : 'hover:bg-indigo-800'} focus:outline-none`}
+          className={`px-3 py-2 ${theme === 'dark' ? 'hover:bg-gray-700' : 'hover:bg-indigo-800'} focus:outline-none`}
           aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
         >
-          {theme === 'light' ? <Moon size={16} /> : <Sun size={16} />}
+          <FontAwesomeIcon icon={theme === 'light' ? faMoon : faSun} size="sm" />
         </button>
       </nav>
 
-      {/* Main Content Area */}
-      <div className="flex-1 flex relative">
+      {/* Main Content Area - Adjusted to account for fixed header */}
+      <div className="flex-1 flex relative mt-10"> {/* Reduced to mt-10 for smaller header */}
         <Sidebar
           collapsed={sidebarCollapsed}
           toggleSidebar={toggleSidebar}

@@ -10,7 +10,8 @@ import { useRatingService } from '../../context/RatingServiceContext';
 import { useTheme } from '../../context/ThemeContext';
 import { Rating } from '../../models/types';
 import { getCategoryRatings } from '../../utils/filterUtils';
-import { BarChart3, RefreshCw } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChartColumn, faArrowsRotate } from '@fortawesome/free-solid-svg-icons';
 
 interface DashboardProps {
   sidebarCollapsed: boolean;
@@ -101,32 +102,46 @@ const Dashboard: React.FC<DashboardProps> = ({ sidebarCollapsed, sidebarWidth })
 
   return (
     <div
-      className={`flex-1 overflow-y-auto ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-50'}`}
+      className={`flex-1 ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-50'}`}
       style={{
         position: 'absolute',
         left: `${sidebarCollapsed ? 48 : sidebarWidth}px`,
         right: 0,
         top: 0,
         bottom: 0,
-        transition: 'left 0.3s ease-in-out'
+        transition: 'left 0.3s ease-in-out',
+        display: 'flex',
+        flexDirection: 'column'
       }}
     >
-      <div className="p-6 h-full">
+      {/* Fixed Header (A2) */}
+      <div
+        className={`${theme === 'dark' ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} border-b`}
+        style={{
+          position: 'fixed',
+          left: `${sidebarCollapsed ? 48 : sidebarWidth}px`,
+          right: 0,
+          top: '40px', // 40px = h-10 (height of the top nav)
+          zIndex: 10,
+          transition: 'left 0.3s ease-in-out',
+          padding: '0.5rem 1rem' // Reduced vertical padding
+        }}
+      >
         {/* Header with Refresh Button */}
-        <div className="flex justify-between items-center mb-6">
-          <h1 className={`text-2xl font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Ratings Dashboard</h1>
+        <div className="flex justify-between items-center">
+          <h1 className={`text-xl font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Ratings Dashboard</h1>
           <div className="flex items-center">
             <span className={`text-xs ${theme === 'dark' ? 'text-gray-300' : 'text-gray-500'} mr-2`}>
               {ratingService.getBaseUrl()}
             </span>
             <button
-              className={`px-3 py-1 text-sm ${theme === 'dark' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-blue-500 hover:bg-blue-600'} text-white rounded flex items-center ${refreshing ? 'opacity-75 cursor-wait' : ''}`}
+              className={`px-2 py-1 text-xs ${theme === 'dark' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-blue-500 hover:bg-blue-600'} text-white rounded flex items-center ${refreshing ? 'opacity-75 cursor-wait' : ''}`}
               onClick={handleRefresh}
               disabled={refreshing || isLoading}
             >
               {refreshing ? (
                 <>
-                  <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <svg className="animate-spin -ml-1 mr-1 h-3 w-3 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
@@ -134,7 +149,7 @@ const Dashboard: React.FC<DashboardProps> = ({ sidebarCollapsed, sidebarWidth })
                 </>
               ) : (
                 <>
-                  <RefreshCw size={16} className="mr-1" />
+                  <FontAwesomeIcon icon={faArrowsRotate} className="mr-1" size="xs" />
                   Refresh Data
                 </>
               )}
@@ -142,6 +157,20 @@ const Dashboard: React.FC<DashboardProps> = ({ sidebarCollapsed, sidebarWidth })
           </div>
         </div>
 
+        {/* Filter Summary Bar */}
+        <div className="mt-2">
+          <FilterSummary />
+        </div>
+      </div>
+
+      {/* Scrollable Content Area (B) */}
+      <div
+        className="overflow-y-auto flex-1 p-6"
+        style={{
+          marginTop: '85px', // Further reduced margin to account for more compact header
+          paddingTop: '0.5rem' // Reduced padding
+        }}
+      >
         {/* Loading indicator */}
         {isLoading && (
           <div className="flex justify-center items-center p-4">
@@ -153,13 +182,10 @@ const Dashboard: React.FC<DashboardProps> = ({ sidebarCollapsed, sidebarWidth })
           </div>
         )}
 
-        {/* Filter Summary Bar */}
-        <FilterSummary />
-
         {/* Rating Bar Chart */}
         <div className={`mt-3 ${theme === 'dark' ? 'bg-gray-700' : 'bg-white'} p-4 rounded-lg shadow`}>
           <h2 className={`text-lg font-semibold mb-2 flex items-center ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-            <BarChart3 size={20} className="text-blue-500 mr-2" />
+            <FontAwesomeIcon icon={faChartColumn} className="text-blue-500 mr-2" />
             Rating Distribution Over Time
           </h2>
           {/* Use the simplified chart to ensure stability */}
